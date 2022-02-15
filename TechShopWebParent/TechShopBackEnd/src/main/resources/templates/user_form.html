@@ -66,48 +66,82 @@
 	</div>
 
 	<div>
-		<h2>Manage Users Manage</h2>
-		<a th:href="@{/users/new}" >Create New User</a>
+		<h2>Manage Users Manage | Create New User</h2>
+		<a th:href="@{/users/new}" >Back</a>
 	</div>
-	<!-- message -->
-	<div th:if="message != null" class="alert alert-success text-center"> 
-		[[${message}]]
-	</div>
-	<div>
-		<table class="table table-bordered table-striped table-hover table-responsive-xl">
-			<thead class="thead-dark">
-				<tr>
-					<th>User ID</th>
-					<th>Photos</th>
-					<th>Email</th>
-					<th>First Name</th>
-					<th>Last Name</th>
-					<th>Roles</th>
-					<th>Enabled</th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="user : ${user}">
-					<td>[[${user.id}]]</td>
-					<td>[[${user.photos}]]</td>
-					<td>[[${user.email}]]</td>
-					<td>[[${user.firstName}]]</td>
-					<td>[[${user.lastName}]]</td>
-					<td>[[${user.roles}]]</td>
-					<td>[[${user.enabled}]]</td>
-					<td>
-						Edit &nbsp; Delete
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+	<!-- table -->
+	
+	<form th:action="@{/users/save}" method="post" style="max-width: 700px; margin: 0 auto" th:object="${user}">
+		<div class="border border-secondary rounded p-3">
+			<!-- email -->
+			<div class="form-group row">
+				<label	class="col-sm-4 col-form-label">Email</label>
+				<div class="col-sm-8">
+					<input type="email" class="form-control" th:field="*{email}" required min="8" maxlength="128" />
+				</div>
+			</div>
+			<!-- fname -->
+			<div class="form-group row">
+				<label	class="col-sm-4 col-form-label">First Name</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" th:field="*{firstName}" required min="2" maxlength="64" />
+				</div>
+			</div>
+			<!-- lastname -->
+			<div class="form-group row">
+				<label	class="col-sm-4 col-form-label">Last Name</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" th:field="*{lastName}" required min="2" maxlength="64" />
+				</div>
+			</div>
+			<!-- pass -->
+			<div class="form-group row">
+				<label	class="col-sm-4 col-form-label">Password</label>
+				<div class="col-sm-8">
+					<input type="password" class="form-control" th:field="*{password}" required min="2" maxlength="64" />
+				</div>
+			</div>
+			<!-- roles -->
+			<div class="form-group row">
+				<label	class="col-sm-4 col-form-label">Roles</label>
+				<div class="col-sm-8">
+					<th:block th:each="role : ${rolesList}" >
+					<input type="checkbox" th:field = "*{roles}"
+						th:text="${role.name}"
+						th:value="${role.id}"
+						class="m-2"
+					 />
+					 - <small>[[${role.description}]]</small>
+					 <br/>
+					 </th:block>
+				</div>
+			</div>
+			<!-- enable -->
+			<div class="form-group row">
+				<label	class="col-sm-4 col-form-label">Enable</label>
+				<div class="col-sm-8">
+					<input type="checkbox"  th:field="*{enabled}" />
+				</div>
+			</div>
+			<!-- btn -->
+			<div class="text-center">
+				<input type="submit" value="Save" class="btn btn-primary m-3" />
+				<input type="button" value="Cancel" class="btn btn-secondary" id="buttonCancel" />
+			</div>
+			
+		</div>
+	</form>
 	
 	<div class="text-center">
 		<p>Techshop Control Panel - Copyright &copy; HuyQuang	
 	</div>
 </div>
-
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#buttonCancel").on("click", function() {
+			window.location = "[[@{/users}]]";
+		});
+	});
+</script>
 </body>
 </html>
