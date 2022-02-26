@@ -71,7 +71,7 @@
 	</div>
 	<!-- table -->
 	
-	<form th:action="@{/users/save}" method="post" style="max-width: 700px; margin: 0 auto" th:object="${user}">
+	<form th:action="@{/users/save}" method="post" style="max-width: 700px; margin: 0 auto" th:object="${user}" onsubmit="return checkEmailUnique(this)">
 		<div class="border border-secondary rounded p-3">
 			<!-- email -->
 			<div class="form-group row">
@@ -132,6 +132,24 @@
 		</div>
 	</form>
 	
+	<!-- modal -->
+	<div class="modal fade text-center" id="modalDialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="model-header">
+					<h4 class="model-title" id="modelTitle">Warning</h4>
+					<button class="close" type="button" data-dimiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					<span id="modalBody"></span>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-danger" type="button" data-dimiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 	<div class="text-center">
 		<p>Techshop Control Panel - Copyright &copy; HuyQuang	
 	</div>
@@ -142,6 +160,33 @@
 			window.location = "[[@{/users}]]";
 		});
 	});
+	
+	function checkEmailUnique(form){
+		url = "[[@{/users/check_email}]]";
+		userEmail = $("#email").val();
+		csrfValue = $("input[name='_csrf']").val();
+		params = {email: userEmail, _csrf: csrfValue};
+		
+		$.post(url, params, function(response) {
+			if(response == "OK") {
+				form.submit();
+			} else if(response == "Duplicated") {
+				showModalDialog("Warning", "There is another user having the mail: " + userEmail);
+			} else {
+				showModalDialog("Error", "Unknown response from server");
+			}
+		}).fail( function() {
+			showModalDialog("Error", "Could not connect to the server");
+		});
+		
+		return false;
+	}
+
+	function showModalDialog(title, message) {
+		$("#modalTitle").text(title);
+		$("#modalBody").text(message);
+		$("#modalDialog").modal();
+	}
 </script>
 </body>
 </html>

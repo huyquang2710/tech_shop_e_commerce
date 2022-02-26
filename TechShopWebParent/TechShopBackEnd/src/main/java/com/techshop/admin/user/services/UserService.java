@@ -30,9 +30,15 @@ public class UserService {
 		encodePass(user);
 		return userRepository.save(user);
 	}
-	
+	// encoding pass
 	private void encodePass(User user) {
 		String encodedPass = passwordEncoder.encode(user.getPassword());
 		user.setPassword(encodedPass);
+	}
+	
+	//  check unique pass
+	public boolean isEmailUnique(String email) {
+		User userByEmail = userRepository.getUserbyEmail(email);
+		return userByEmail == null;
 	}
 }
