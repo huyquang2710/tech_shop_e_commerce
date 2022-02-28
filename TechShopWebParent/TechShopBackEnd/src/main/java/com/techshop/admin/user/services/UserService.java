@@ -29,7 +29,17 @@ public class UserService {
 		return (List<Role>) roleRepository.findAll();
 	}
 	public User saveUser(User user) {
-		encodePass(user);
+		boolean isUpdatingUser = ( user.getId() != null );
+		if(isUpdatingUser) {
+			User existingUser = userRepository.findById(user.getId()).get();
+			if(user.getPassword().isEmpty()) {
+				user.setPassword(existingUser.getPassword());
+			} else {
+				encodePass(user);
+			}
+		} else {
+			encodePass(user);
+		}
 		return userRepository.save(user);
 	}
 	// encoding pass
@@ -39,9 +49,20 @@ public class UserService {
 	}
 	
 	//  check unique pass
-	public boolean isEmailUnique(String email) {
+	public boolean isEmailUnique(Integer id, String email) {
 		User userByEmail = userRepository.getUserbyEmail(email);
-		return userByEmail == null;
+		
+		if(userByEmail == null ) return true;
+		
+		boolean isCreatingNew = (id == null);
+		if(isCreatingNew) {
+			if(userByEmail != null) return false;
+		} else {
+			if(userByEmail.getId() != id) {
+				return false;
+			}
+		}
+		return true;
 	}
 	// find by id
 	public User getUserById(Integer id) {
