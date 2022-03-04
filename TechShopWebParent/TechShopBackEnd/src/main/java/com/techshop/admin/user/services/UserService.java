@@ -65,11 +65,19 @@ public class UserService {
 		return true;
 	}
 	// find by id
-	public User getUserById(Integer id) {
+	public User getUserById(Integer id) throws UsernameNotFoundException {
 		try {
 			return userRepository.findById(id).get();
 		} catch (NoSuchElementException e) {
 			throw new UsernameNotFoundException("Could not found any user with ID: " + id);
 		}
+	}
+	//delete
+	public void delete(Integer id) throws UsernameNotFoundException {
+		Long countById = userRepository.countById(id);
+		if(countById == null || countById == 0) {
+			throw new UsernameNotFoundException("Count not found any user");
+		}
+		userRepository.deleteById(id);
 	}
 }

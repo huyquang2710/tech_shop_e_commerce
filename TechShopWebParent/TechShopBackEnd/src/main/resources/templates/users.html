@@ -104,7 +104,7 @@
 					<td>
 						<a href="" class="fas fa-edit fa-2x icon-green" th:href="@{'/users/edit/' + ${user.id}}" title="Edit user"></a>
 						&nbsp;
-						<a href="" class="fas fa-trash fa-2x icon-dark"></a>
+						<a th:userId = "${user.id}" class="fas fa-trash fa-2x icon-dark link-delete" th:href="@{'/users/delete/' + ${user.id}}	" title="Delete"></a>
 					</td>
 				</tr>
 			</tbody>
@@ -116,5 +116,37 @@
 	</div>
 </div>
 
+	<!-- modal -->
+	<div class="modal fade text-center" id="confirmModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="model-header">
+					<h4 class="model-title" id="modelTitle">Delete Confirmation</h4>
+				</div>
+				<div class="modal-body">
+					<span id="modalBody"></span>
+				</div>
+				<div class="modal-footer">
+					<a href="" class="btn btn-success" id="yesBtn">Yes</a>
+					<button class="btn btn-danger" type="button" data-dismiss="modal">No</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+<script>
+	$(document).ready(function() {
+		$(".link-delete").on("click", function(e) {
+			e.preventDefault();
+			//alert($(this).attr("href"));
+			link = $(this);
+			userId = link.attr("userId");
+			$("#yesBtn").attr("href", link.attr("href"));
+			$("#modalBody").text("Are you sure about that: " + userId);
+			$("#confirmModal").modal();
+		});
+	});
+</script>
 </body>
 </html>
