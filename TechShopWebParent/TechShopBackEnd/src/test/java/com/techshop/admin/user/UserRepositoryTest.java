@@ -89,4 +89,10 @@ public class UserRepositoryTest {
 		
 		assertThat(countById).isNotNull().isGreaterThan(0);
 	}
+	
+	@Test
+	public void testUpdateEnabled() {
+		Integer id = 1;
+		userRepository.updateEnabledStatus(id, true);
+	}
 }

@@ -3,6 +3,8 @@ package com.techshop.admin.user.services;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -14,6 +16,7 @@ import com.techshop.common.entity.Role;
 import com.techshop.common.entity.User;
 
 @Service
+@Transactional
 public class UserService {
 	@Autowired
 	private UserRepository userRepository;
@@ -79,5 +82,8 @@ public class UserService {
 			throw new UsernameNotFoundException("Count not found any user");
 		}
 		userRepository.deleteById(id);
+	}
+	public void updateEnabled(Integer id, boolean enabled) {
+		userRepository.updateEnabledStatus(id, enabled);
 	}
 }
