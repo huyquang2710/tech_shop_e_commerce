@@ -1,5 +1,6 @@
 package com.techshop.admin.user.controllers;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,12 +8,17 @@ import org.springframework.data.domain.Page;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.techshop.admin.exception.UserNotFoundException;
 import com.techshop.admin.user.services.UserService;
+import com.techshop.admin.utils.FileUploadUtil;
 import com.techshop.common.entity.Role;
 import com.techshop.common.entity.User;
 
@@ -67,11 +73,30 @@ public class UserController {
 	}
 	
 	@PostMapping("/users/save")
-	public String saveUser(User user, RedirectAttributes redirectAttributes) {
-		System.out.println(user);
+	public String saveUser(User user, RedirectAttributes redirectAttributes, @RequestParam("image") MultipartFile multipartFile) throws IOException {
 		
+		System.out.println(user);
+		System.out.println("image: " + multipartFile.getOriginalFilename());
+		
+		if(!multipartFile.isEmpty()) {
+
+			String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+			
+			user.setPhotos(fileName);
+			User saveUser = userService.saveUser(user);	
+			String uploadDir = "user-photos/" + saveUser.getId();
+			
+			FileUploadUtil.cleanDir(uploadDir);
+			FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
+			
+		} else {
+			if(user.getPhotos().isEmpty()) {
+				user.setPhotos(null);
+			}
+			userService.saveUser(user);
+		}
 		redirectAttributes.addFlashAttribute("message", "The user has been saved successfully");
-		userService.saveUser(user);	
+		
 		return "redirect:/users";
 	}
 	
@@ -93,11 +118,11 @@ public class UserController {
 	}
 	// delete
 	@GetMapping("/users/delete/{id}")
-	public String deleteUser(@PathVariable(name = "id") Integer id, Model model, RedirectAttributes redirectAttributes) {
+	public String deleteUser(@PathVariable(name = "id") Integer id, Model model, RedirectAttributes redirectAttributes) throws UserNotFoundException {
 		try {
 			userService.delete(id);
 			redirectAttributes.addFlashAttribute("message", "The User has been deleted");
-		} catch (UsernameNotFoundException e) {
+		} catch (UserNotFoundException e) {
 			redirectAttributes.addFlashAttribute("message", e.getMessage());
 		}
 		return "redirect:/users";

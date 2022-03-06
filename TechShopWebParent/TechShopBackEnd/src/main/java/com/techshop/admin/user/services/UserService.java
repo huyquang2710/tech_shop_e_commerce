@@ -13,6 +13,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.techshop.admin.exception.UserNotFoundException;
 import com.techshop.admin.user.repositories.RoleRepository;
 import com.techshop.admin.user.repositories.UserRepository;
 import com.techshop.common.entity.Role;
@@ -85,10 +86,10 @@ public class UserService {
 		}
 	}
 	//delete
-	public void delete(Integer id) throws UsernameNotFoundException {
+	public void delete(Integer id) throws UserNotFoundException {
 		Long countById = userRepository.countById(id);
 		if(countById == null || countById == 0) {
-			throw new UsernameNotFoundException("Count not found any user");
+			throw new UserNotFoundException("Count not found any user");
 		}
 		userRepository.deleteById(id);
 	}
