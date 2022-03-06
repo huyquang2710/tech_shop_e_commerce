@@ -3,6 +3,7 @@ package com.techshop.admin.user.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,9 +21,35 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
+	// first page
 	@GetMapping("/users")
-	public String listAll(Model model) {
-		List<User> userList = userService.findAll();
+	public String listFirstPage(Model model) {
+		return listAllByPage(1, model);
+	}
+	
+	//pageable
+	@GetMapping("/users/page/{pageNum}")
+	public String listAllByPage(@PathVariable("pageNum") int pageNum, Model model) {
+		Page<User> pageUser = userService.findAllPage(pageNum);
+		List<User> userList = pageUser.getContent();
+		
+		long startCount = (pageNum - 1) * UserService.USERS_PER_PAGE + 1;
+		long endCount = startCount + UserService.USERS_PER_PAGE - 1;
+		if(endCount > pageUser.getTotalElements()) {
+			endCount = pageUser.getTotalElements();
+		}
+		
+		System.out.println("Page Num: " + pageNum);
+		System.out.println("Total element: " + pageUser.getTotalElements());
+		System.out.println("Total page: " + pageUser.getTotalPages());
+		System.out.println("statrt count: " + startCount);
+		System.out.println("end count: " + endCount);
+		
+		model.addAttribute("currentPage", pageNum);
+		model.addAttribute("startCount", startCount);
+		model.addAttribute("endCount", endCount);
+		model.addAttribute("totalItems", pageUser.getTotalElements());
+		model.addAttribute("totalPages", pageUser.getTotalPages());
 		model.addAttribute("user", userList);
 		return "users";
 	}
@@ -85,4 +112,5 @@ public class UserController {
 		
 		return "redirect:/users";
 	}
+
 }
