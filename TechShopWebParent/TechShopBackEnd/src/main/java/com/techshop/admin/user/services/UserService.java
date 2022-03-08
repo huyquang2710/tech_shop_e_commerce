@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -33,8 +33,12 @@ public class UserService {
 	public List<User> findAll() {
 		return (List<User>) userRepository.findAll();
 	}
-	public Page<User> findAllPage(int pageNum) {
-		Pageable pageable = PageRequest.of(pageNum - 1, USERS_PER_PAGE);
+	public Page<User> findAllPage(int pageNum, String sortField, String sortDir) {
+		Sort sort = Sort.by(sortField);
+		
+		sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
+		
+		Pageable pageable = PageRequest.of(pageNum - 1, USERS_PER_PAGE, sort);
 		return userRepository.findAll(pageable);
 	}
 	
@@ -78,11 +82,11 @@ public class UserService {
 		return true;
 	}
 	// find by id
-	public User getUserById(Integer id) throws UsernameNotFoundException {
+	public User getUserById(Integer id) throws UserNotFoundException {
 		try {
 			return userRepository.findById(id).get();
 		} catch (NoSuchElementException e) {
-			throw new UsernameNotFoundException("Could not found any user with ID: " + id);
+			throw new UserNotFoundException("Could not found any user with ID: " + id);
 		}
 	}
 	//delete

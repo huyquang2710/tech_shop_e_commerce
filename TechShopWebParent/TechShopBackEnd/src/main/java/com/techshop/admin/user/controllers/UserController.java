@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -30,13 +30,17 @@ public class UserController {
 	// first page
 	@GetMapping("/users")
 	public String listFirstPage(Model model) {
-		return listAllByPage(1, model);
+		return listAllByPage(1, model, "firstName", "asc");
 	}
 	
 	//pageable
 	@GetMapping("/users/page/{pageNum}")
-	public String listAllByPage(@PathVariable("pageNum") int pageNum, Model model) {
-		Page<User> pageUser = userService.findAllPage(pageNum);
+	public String listAllByPage(@PathVariable("pageNum") int pageNum, Model model, @Param("sortField") String sortField, @Param("sortDir") String sortDir) {
+		Page<User> pageUser = userService.findAllPage(pageNum, sortField, sortDir);
+		
+		System.out.println("sortField: " + sortField);
+		System.out.println("sortDir: " + sortDir);
+		
 		List<User> userList = pageUser.getContent();
 		
 		long startCount = (pageNum - 1) * UserService.USERS_PER_PAGE + 1;
@@ -51,12 +55,17 @@ public class UserController {
 		System.out.println("statrt count: " + startCount);
 		System.out.println("end count: " + endCount);
 		
+		String reverseSortDir = sortDir.equals("asc") ? "desc" : "asc";
+		
 		model.addAttribute("currentPage", pageNum);
 		model.addAttribute("startCount", startCount);
 		model.addAttribute("endCount", endCount);
 		model.addAttribute("totalItems", pageUser.getTotalElements());
 		model.addAttribute("totalPages", pageUser.getTotalPages());
 		model.addAttribute("user", userList);
+		model.addAttribute("sortField", sortField);
+		model.addAttribute("sortDir", sortDir);
+		model.addAttribute("reverseSortDir", reverseSortDir);
 		return "users";
 	}
 	@GetMapping("/users/new")
@@ -110,7 +119,7 @@ public class UserController {
 			model.addAttribute("pageTitle", "Update User: " + user.getFirstName() + " " + user.getLastName());
 			model.addAttribute("rolesList", roleList);
 			return "user_form";
-		} catch (UsernameNotFoundException e) {
+		} catch (UserNotFoundException e) {
 			attributes.addFlashAttribute("message", e.getMessage());
 			return "redirect:/users";
 		}
