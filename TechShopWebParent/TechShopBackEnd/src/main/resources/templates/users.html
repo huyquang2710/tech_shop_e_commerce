@@ -69,23 +69,38 @@
 		</div>
 
 		<div>
-			<h2>Manage Users Manage</h2>
+			<h2>Manage Users</h2>
 			<a th:href="@{/users/new}">Create New User</a>
 		</div>
 		<!-- message -->
-		<div th:if="message != null" class="alert alert-success text-center">
+		<div th:if="${message != null}" class="alert alert-success text-center">
 			[[${message}]]
 		</div>
+
+		<!-- search -->
+		<div class="">
+			<form th:action="@{/users/page/1}" class="form-inline m-3">
+				<input type="hidden" name="sortField" th:value="${sortField}" />
+				<input type="hidden" name="sortDir" th:value="${sortDir}" />
+				Filter:&nbsp;
+				<input type="search" name="keyword" th:value="${keyword}" class="form-control" required />
+				&nbsp;&nbsp;
+				<input type="submit" value="Search" class="btn btn-primary" />
+				&nbsp;&nbsp;
+				<input type="button" value="Clear" class="btn btn-danger" onClick="clearFilter()" />
+			</form>
+		</div>
+
 		<div>
 			<table class="table table-bordered table-striped table-hover table-responsive-xl">
 				<thead class="thead-dark">
 					<tr>
 						<th>
 							<a th:if="${sortField != 'id'}" th:href="@{'/users/page/' + ${currentPage}
-								+ '?sortField=id&sortDir=' + ${sortDir}}" class="text-white">User ID
+								+ '?sortField=id&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}" class="text-white">User ID
 							</a>
 							<a th:if="${sortField == 'id'}" th:href="@{'/users/page/' + ${currentPage} 
-								+ '?sortField=id&sortDir=' + ${reverseSortDir}}" class="text-white">User ID
+								+ '?sortField=id&sortDir=' + ${reverseSortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}" class="text-white">User ID
 							</a>
 							<span th:if="${sortField == 'id'}" 
 								  th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down' }"></span>
@@ -93,10 +108,10 @@
 						<th>Photos</th>
 						<th>
 							<a th:if="${sortField != 'email'}" th:href="@{'/users/page/' + ${currentPage}
-								+ '?sortField=email&sortDir=' + ${sortDir}}" class="text-white">Email
+								+ '?sortField=email&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}" class="text-white">Email
 							</a>
 							<a th:if="${sortField == 'email'}" th:href="@{'/users/page/' + ${currentPage} 
-								+ '?sortField=email&sortDir=' + ${reverseSortDir}}" class="text-white">Email
+								+ '?sortField=email&sortDir=' + ${reverseSortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}" class="text-white">Email
 							</a>
 							<span th:if="${sortField == 'email'}" 
 								  th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down' }"></span>
@@ -104,10 +119,10 @@
 
 						<th>
 							<a th:if="${sortField != 'firstName'}" th:href="@{'/users/page/' + ${currentPage}
-								+ '?sortField=firstName&sortDir=' + ${sortDir}}" class="text-white">First Name
+								+ '?sortField=firstName&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}" class="text-white">First Name
 							</a>
 							<a th:if="${sortField == 'firstName'}" th:href="@{'/users/page/' + ${currentPage} 
-								+ '?sortField=firstName&sortDir=' + ${reverseSortDir}}" class="text-white">First Name
+								+ '?sortField=firstName&sortDir=' + ${reverseSortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}" class="text-white">First Name
 							</a>
 							<span th:if="${sortField == 'firstName'}" 
 								  th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down' }"></span>
@@ -159,7 +174,7 @@
 		</div>
 
 		<!-- pageable -->
-		<div class="">
+		<div th:if="${totalPages > 1}">
 			<nav aria-label="Page navigation example">
 				<ul class="pagination justify-content-center">
 					<li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'} "><a class="page-link" 
@@ -218,6 +233,9 @@
 				$("#confirmModal").modal();
 			});
 		});
+		function clearFilter() {
+			window.location = "[[@{/users}]]"
+		};
 	</script>
 </body>
 
