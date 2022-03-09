@@ -21,6 +21,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.techshop.admin.exception.UserNotFoundException;
 import com.techshop.admin.export.UserCsvExporter;
 import com.techshop.admin.export.UserExcelExporter;
+import com.techshop.admin.export.UserPdfExporter;
 import com.techshop.admin.user.services.UserService;
 import com.techshop.admin.utils.FileUploadUtil;
 import com.techshop.common.entity.Role;
@@ -168,5 +169,11 @@ public class UserController {
 		List<User> userList = userService.findAll();
 		UserExcelExporter excelExporter = new UserExcelExporter();
 		excelExporter.exportExcel(userList, response);
+	}
+	@GetMapping("/users/export/pdf")
+	public void exportPdf(HttpServletResponse response) throws IOException {
+		List<User> userList = userService.findAll();
+		UserPdfExporter excelExporter = new UserPdfExporter();
+		excelExporter.exportPdf(userList, response);
 	}
 }
