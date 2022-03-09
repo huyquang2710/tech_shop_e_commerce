@@ -3,6 +3,8 @@ package com.techshop.admin.user.controllers;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.repository.query.Param;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.techshop.admin.csv.UserCsvExporter;
 import com.techshop.admin.exception.UserNotFoundException;
 import com.techshop.admin.user.services.UserService;
 import com.techshop.admin.utils.FileUploadUtil;
@@ -30,7 +33,7 @@ public class UserController {
 	// first page
 	@GetMapping("/users")
 	public String listFirstPage(Model model) {
-		return listAllByPage(1, model, "firstName", "asc", null);
+		return listAllByPage(1, model, "id", "asc", null);
 	}
 	
 	//pageable
@@ -153,5 +156,10 @@ public class UserController {
 		
 		return "redirect:/users";
 	}
-
+	@GetMapping("/users/export/csv")
+	public void exportCSV(HttpServletResponse response) throws IOException {
+		List<User> userList = userService.findAll();
+		UserCsvExporter csvExporter = new UserCsvExporter();
+		csvExporter.export(userList, response);
+	}
 }

@@ -70,8 +70,13 @@
 
 		<div>
 			<h2>Manage Users</h2>
+			<!-- create new -->
 			<a th:href="@{/users/new}">Create New User</a>
+			&nbsp;|&nbsp;
+			<!-- csv --> 
+			<a th:href="@{/users/export/csv}">Export CSV</a>
 		</div>
+		
 		<!-- message -->
 		<div th:if="${message != null}" class="alert alert-success text-center">
 			[[${message}]]
