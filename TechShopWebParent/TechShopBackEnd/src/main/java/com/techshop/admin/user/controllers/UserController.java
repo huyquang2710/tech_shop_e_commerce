@@ -18,8 +18,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.techshop.admin.csv.UserCsvExporter;
 import com.techshop.admin.exception.UserNotFoundException;
+import com.techshop.admin.export.UserCsvExporter;
+import com.techshop.admin.export.UserExcelExporter;
 import com.techshop.admin.user.services.UserService;
 import com.techshop.admin.utils.FileUploadUtil;
 import com.techshop.common.entity.Role;
@@ -161,5 +162,11 @@ public class UserController {
 		List<User> userList = userService.findAll();
 		UserCsvExporter csvExporter = new UserCsvExporter();
 		csvExporter.export(userList, response);
+	}
+	@GetMapping("/users/export/excel")
+	public void exportExcel(HttpServletResponse response) throws IOException {
+		List<User> userList = userService.findAll();
+		UserExcelExporter excelExporter = new UserExcelExporter();
+		excelExporter.exportExcel(userList, response);
 	}
 }
