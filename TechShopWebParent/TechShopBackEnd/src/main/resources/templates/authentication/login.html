@@ -1,0 +1,48 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<!-- Required meta tags -->
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=120, mininum-scale=1.0">
+	<title>Login</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" type="text/css">
+	<link rel="stylesheet" th:href="@{/fontawesome/all.css}" type="text/css">
+	<link rel="stylesheet" th:href="@{/style.css}" type="text/css">
+</head>
+
+<body>
+
+	<div class="container-fluid text-center">
+
+		<div class="">
+			<img class="img-fluid" th:src="@{/images/techshop-logo.jpg}" alt="">
+		</div>
+
+		<form th:action="@{/login}" method="post" style="max-width: 350px; margin: 0 auto;">
+			<div class="border border-secondary rounded p-3">
+				<p>Access to Techshop Control Panel</p>
+				<p>
+					<input type="email" name="email" placeholder="Email here" required class="form-control">
+				</p>
+				<p>
+					<input type="password" name="password" placeholder="Password here" required class="form-control">
+				</p>
+				<p>
+					<input type="submit" value="Login" class="btn btn-primary">
+				</p>
+			</div>
+		</form>
+		
+		
+	
+	
+		<div class="text-center">
+			<p>Techshop Control Panel - Copyright &copy; HuyQuang
+		</div>
+	</div>
+
+</body>
+
+</html>

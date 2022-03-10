@@ -9,4 +9,8 @@ public class MainController {
 	public String view() {
 		return "index";
 	}
+	@GetMapping("/login")
+	public String loginPage() {
+		return "authentication/login";
+	}
 }
