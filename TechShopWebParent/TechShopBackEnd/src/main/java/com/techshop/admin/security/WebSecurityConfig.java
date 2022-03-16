@@ -47,7 +47,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 			.loginPage("/login")
 			.usernameParameter("email")
 			.passwordParameter("password")
-			.permitAll();
+			.permitAll()
+			.and().logout().permitAll();
 	}
 	
 //	@Override
