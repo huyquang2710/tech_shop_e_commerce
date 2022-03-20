@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+	<head th:fragment="page_head(title)">
+		<!-- Required meta tags -->
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+		<meta name="viewport"
+			content="width=device-width, initial-scale=120, mininum-scale=1.0">
+		<title>[[${title}]]</title>
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" type="text/css">
+		<link rel="stylesheet" th:href="@{/fontawesome/all.css}" type="text/css">
+		<link rel="stylesheet" th:href="@{/style.css}" type="text/css">
+		
+		<script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}" ></script>
+		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" ></script>
+		<script type="text/javascript" th:src="@{/js/common.js}" ></script>
+		
+		
+		</head>
 <body>
+
+<div th:fragment="footer" class="text-center m-3">
+			<p>Techshop Control Panel - Copyright &copy; HuyQuang
+</div>
+
 <th th:fragment="column_link(fieldName, columnLabel)">
 	<a th:href="@{'/users/page/' + ${currentPage}
 		+ '?sortField=' + ${fieldName} + '&sortDir=' + ${sortField != fieldName ? sortDir : reverseSortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}" class="text-white">
