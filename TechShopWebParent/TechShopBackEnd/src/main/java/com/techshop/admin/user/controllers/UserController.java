@@ -23,6 +23,7 @@ import com.techshop.admin.export.UserCsvExporter;
 import com.techshop.admin.export.UserExcelExporter;
 import com.techshop.admin.export.UserPdfExporter;
 import com.techshop.admin.user.services.UserService;
+import com.techshop.admin.user.services.UserServiceImpl;
 import com.techshop.admin.utils.FileUploadUtil;
 import com.techshop.common.entity.Role;
 import com.techshop.common.entity.User;
@@ -54,8 +55,8 @@ public class UserController {
 		
 		List<User> userList = pageUser.getContent();
 		
-		long startCount = (pageNum - 1) * UserService.USERS_PER_PAGE + 1;
-		long endCount = startCount + UserService.USERS_PER_PAGE - 1;
+		long startCount = (pageNum - 1) * UserServiceImpl.USERS_PER_PAGE + 1;
+		long endCount = startCount + UserServiceImpl.USERS_PER_PAGE - 1;
 		if(endCount > pageUser.getTotalElements()) {
 			endCount = pageUser.getTotalElements();
 		}

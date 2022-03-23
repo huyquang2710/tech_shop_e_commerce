@@ -1,7 +1,7 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="fragments :: page_head(${pageTitle})" ></head>
+<head th:replace="fragments :: page_head('Your Account Detail')" ></head>
 
 <body>
 
@@ -9,14 +9,13 @@
 			<!-- menu -->
 	<div th:replace="navigation :: menu"></div>
 
-		<div>
-			<h2>Manage Users Manage | [[${pageTitle}]]</h2>
-			<a th:href="@{/users}">Back</a>
-		</div>
+
 		<!-- table -->
 
-		<form enctype="multipart/form-data" th:action="@{/users/save}" method="post" style="max-width: 700px; margin: 0 auto" th:object="${user}"
-			onsubmit="return checkEmailUnique(this)">
+		<form enctype="multipart/form-data" th:action="@{/account/update}" method="post" style="max-width: 700px; margin: 0 auto" th:object="${user}">
+			<div class="text-center">
+				<h2>Your Account Detail</h2>
+			</div>
 			<div class="border border-secondary rounded p-3">
 				<!-- id -->
 				<input type="hidden" th:field="*{id}">
@@ -24,7 +23,7 @@
 				<div class="form-group row">
 					<label class="col-sm-4 col-form-label">Email</label>
 					<div class="col-sm-8">
-						<input type="email" class="form-control" th:field="*{email}" required min="8" maxlength="128" />
+						<input type="email" class="form-control" th:field="*{email}" readonly="readonly"/>
 					</div>
 				</div>
 				<!-- fname -->
@@ -47,28 +46,23 @@
 				<div class="form-group row">
 					<label class="col-sm-4 col-form-label">Password</label>
 					<div class="col-sm-8">
-						<input th:if="${user.id == null}" type="password" class="form-control" th:field="*{password}"
-							required minlength="5" maxlength="64" />
-						
+						<input type="password" class="form-control" th:field="*{password}"
+							placeholder="đổi pass ở đây nè dmm." minlength="5" maxlength="64"
+							oninput="checkPasswordMatch(document.getElementById('confirmPassword'))" />
+					</div>
+				</div>
+								<!-- pass -->
+				<div class="form-group row">
+					<label class="col-sm-4 col-form-label">Confirm Password</label>
+					<div class="col-sm-8">
+						<input type="password" class="form-control" id="confirmPassword" minlength="5" maxlength="64" />
 					</div>
 				</div>
 				<!-- roles -->
 				<div class="form-group row">
 					<label class="col-sm-4 col-form-label">Roles</label>
 					<div class="col-sm-8">
-						<th:block th:each="role : ${rolesList}">
-							<input type="checkbox" th:field="*{roles}" th:text="${role.name}" th:value="${role.id}"
-								class="m-2" />
-							- <small>[[${role.description}]]</small>
-							<br />
-						</th:block>
-					</div>
-				</div>
-				<!-- enable -->
-				<div class="form-group row">
-					<label class="col-sm-4 col-form-label">Enable</label>
-					<div class="col-sm-8">
-						<input type="checkbox" th:field="*{enabled}" />
+						<span><b>[[${user.roles}]]</b></span>
 					</div>
 				</div>
 
@@ -143,34 +137,13 @@
 			reader.readAsDataURL(file);
 		}
 
-		function checkEmailUnique(form) {
-			url = "[[@{/users/check_email}]]";
-			userEmail = $("#email").val();
-			userId = $("#id").val();
-
-			csrfValue = $("input[name='_csrf']").val();
-			params = { id: userId, email: userEmail, _csrf: csrfValue };
-
-			$.post(url, params, function (response) {
-				if (response == "OK") {
-					form.submit();
-				} else if (response == "Duplicated") {
-					showModalDialog("Warning", "There is another user having the mail: " + userEmail);
-				} else {
-					showModalDialog("Error", "Unknown response from server");
-				}
-			}).fail(function () {
-				showModalDialog("Error", "Could not connect to the server");
-			});
-
-			return false;
-		}
-
-		function showModalDialog(title, message) {
-			$("#modalTitle").text(title);
-			$("#modalBody").text(message);
-			$("#modalDialog").modal();
-		}
+		function checkPasswordMatch(confirmPassword) {
+			if(confirmPassword.value != $("#password").val()) {
+				confirmPassword.setCustomValidity("Pass ko giong dmm!");
+			} else {
+				confirmPassword.setCustomValidity("");
+			};
+		};
 	</script>
 </body>
 
