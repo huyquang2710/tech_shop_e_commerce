@@ -9,12 +9,15 @@
 	<!-- menu -->
 	<div th:replace="navigation :: menu"></div>
 	
-	<div th:replace="fragments :: footer"></div>
-	
-	
 	<div>
-		<p>Techshop Control Panel - Copyright &copy; HuyQuang	
+		<h2>Tech Shop</h2>
+		 Welcome: <a th:href="@{/account}" sec:authentication="principal.fullname" ></a>
+		 &nbsp;
+		 <span sec:authentication="principal.authorities" ></span>
+		
 	</div>
+	
+	<div th:replace="fragments :: footer"></div>
 </div>
 </body>
 </html>

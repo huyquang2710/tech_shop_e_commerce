@@ -41,6 +41,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
+		.antMatchers("/users/**").hasAuthority("Admin")
 		.anyRequest().authenticated()
 		.and()
 		.formLogin()
@@ -59,6 +60,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	public void configure(WebSecurity web) throws Exception {
 	    web
 	        .ignoring()
-	        .antMatchers("/css*", "/fontawesome*", "/webjars/**", "/images/**", "/js/**");
+	        .antMatchers("/images/**", "/js/**", "/webjars/**");
 	}
 }
