@@ -84,59 +84,11 @@
 
 			</div>
 		</form>
-
-		<!-- modal -->
-		<div class="modal fade text-center" id="modalDialog">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="model-header">
-						<h4 class="model-title" id="modelTitle">Warning</h4>
-						<button class="close" type="button" data-dimiss="modal">&times;</button>
-					</div>
-					<div class="modal-body">
-						<span id="modalBody"></span>
-					</div>
-					<div class="modal-footer">
-						<button class="btn btn-danger" type="button" data-dimiss="modal">Close</button>
-					</div>
-				</div>
-			</div>
-		</div>
-
 	<div th:replace="fragments :: footer"></div>
 	</div>
 	<script type="text/javascript">
-		$(document).ready(function () {
-			$("#buttonCancel").on("click", function () {
-				window.location = "[[@{/users}]]";
-			});
-			// size image
-			// show image
-			$("#fileImage").change(function () {
-				fileSize = this.files[0].size;
-				//alert("File size: " + fileSize);
-
-				if (fileSize > 1100000) {
-					this.setCustomValidity("You must chooes an image less than 1MB!");
-					this.reportValidity();
-				} else {
-					this.setCustomValidity("");
-					showImageThumbnail(this);
-				}
-			});
-		});
-
-		// show image
-
-		function showImageThumbnail(fileInput) {
-			var file = fileInput.files[0];
-			var reader = new FileReader();
-			reader.onload = function (e) {
-				$("#thumbnail").attr("src", e.target.result);
-			};
-			reader.readAsDataURL(file);
-		}
-
+		moduleURL = "[[@{/}]]";
+	
 		function checkPasswordMatch(confirmPassword) {
 			if(confirmPassword.value != $("#password").val()) {
 				confirmPassword.setCustomValidity("Pass ko giong dmm!");
@@ -145,6 +97,7 @@
 			};
 		};
 	</script>
+	<script th:src="@{/js/common_form.js}"></script>
 </body>
 
 </html>

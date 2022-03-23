@@ -29,7 +29,7 @@ public class AccountController {
 		User user = userService.getByEmail(email);
 		model.addAttribute("user", user);
 		
-		return "/authentication/account_form";
+		return "users/account_form";
 	}
 	
 	@PostMapping("/account/update")
