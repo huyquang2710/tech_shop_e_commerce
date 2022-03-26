@@ -1,4 +1,4 @@
-package com.techshop.admin.user.services;
+package com.techshop.admin.user.services.impl;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import com.techshop.admin.exception.UserNotFoundException;
 import com.techshop.admin.user.repositories.RoleRepository;
 import com.techshop.admin.user.repositories.UserRepository;
+import com.techshop.admin.user.services.UserService;
 import com.techshop.common.entity.Role;
 import com.techshop.common.entity.User;
 

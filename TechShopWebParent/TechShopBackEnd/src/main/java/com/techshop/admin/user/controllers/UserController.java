@@ -23,7 +23,7 @@ import com.techshop.admin.export.UserCsvExporter;
 import com.techshop.admin.export.UserExcelExporter;
 import com.techshop.admin.export.UserPdfExporter;
 import com.techshop.admin.user.services.UserService;
-import com.techshop.admin.user.services.UserServiceImpl;
+import com.techshop.admin.user.services.impl.UserServiceImpl;
 import com.techshop.admin.utils.FileUploadUtil;
 import com.techshop.common.entity.Role;
 import com.techshop.common.entity.User;
