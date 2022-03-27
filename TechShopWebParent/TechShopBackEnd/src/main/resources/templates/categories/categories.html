@@ -59,7 +59,7 @@
 					<tr th:each="category : ${category}">
 						<td>[[${category.id}]]</td>
 						<td>
-							Image
+							<img th:if="${category.image != null}" th:src="@{${category.photosImagePath}}" style="width: 100px">
 						</td>
 						<td>[[${category.name}]]</td>
 						<td>[[${category.alias}]]</td>

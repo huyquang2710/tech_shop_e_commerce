@@ -10,4 +10,5 @@ public interface CategoryService {
 	List<Category> listCategoriesUsedInForm();
 	
 	Category save(Category category);
+	
 }

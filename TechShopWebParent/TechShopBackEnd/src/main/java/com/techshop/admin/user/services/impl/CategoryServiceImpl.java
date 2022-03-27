@@ -19,7 +19,43 @@ public class CategoryServiceImpl implements CategoryService {
 
 	@Override
 	public List<Category> listAll() {
-		return (List<Category>) categoryRepository.findAll();
+		 List<Category> rootCategories = categoryRepository.findRootCategories();
+		 
+		 return listHierarchicalCategories(rootCategories);
+	}
+	
+	private List<Category> listHierarchicalCategories(List<Category> rootCategories) {
+		List<Category> hierarchicalCategories = new ArrayList<>();
+		
+		for(Category rootCategory : rootCategories ) {
+			hierarchicalCategories.add(Category.copyAll(rootCategory));
+			
+			Set<Category> children = rootCategory.getChildren();
+			
+			for(Category subCategory : children) {
+				String name = "--" + subCategory.getName();
+				hierarchicalCategories.add(Category.copyAll(subCategory, name));
+				
+				listSubHierarchicalCategories(hierarchicalCategories, subCategory, 1);
+			}
+		}
+		return hierarchicalCategories;
+	}
+	
+	private void listSubHierarchicalCategories(List<Category> hierarchicalCategories, Category parent, int subLevel) {
+		Set<Category> children = parent.getChildren();
+		int newSubLevel = subLevel + 1;
+		
+		for(Category subCategory : children) {
+			String name = "";
+			for(int i = 0; i < newSubLevel; i++) {
+				name += "--";
+			}
+			name += subCategory.getName();
+			hierarchicalCategories.add(Category.copyAll(subCategory, name));
+			
+			listSubHierarchicalCategories(hierarchicalCategories, subCategory, newSubLevel);
+		}
 	}
 
 	// show category theo cap bac
@@ -41,7 +77,7 @@ public class CategoryServiceImpl implements CategoryService {
 					String name = "--" + subCategory.getName();
 					categoriesUserdInForm.add(Category.copyIdAndName(subCategory.getId(), name));
 
-					listChildren(categoriesUserdInForm, subCategory, 1);
+					listSubCategoriesUsedInForm(categoriesUserdInForm, subCategory, 1);
 				}
 			}
 		}
@@ -49,7 +85,7 @@ public class CategoryServiceImpl implements CategoryService {
 		return categoriesUserdInForm;
 	}
 	
-	private void listChildren(List<Category> categoriesUserdInForm, Category parent, int subLevel) {
+	private void listSubCategoriesUsedInForm(List<Category> categoriesUserdInForm, Category parent, int subLevel) {
 		int newSubLevel = subLevel + 1;
 		Set<Category> children = parent.getChildren();
 		
@@ -61,7 +97,7 @@ public class CategoryServiceImpl implements CategoryService {
 			name += subCategory.getName();
 			categoriesUserdInForm.add(Category.copyIdAndName(subCategory.getId(), name));
 			
-			listChildren(categoriesUserdInForm, subCategory, newSubLevel);
+			listSubCategoriesUsedInForm(categoriesUserdInForm, subCategory, newSubLevel);
 		}
 	}
 
