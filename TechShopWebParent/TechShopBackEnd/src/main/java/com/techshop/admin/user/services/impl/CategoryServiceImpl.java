@@ -2,11 +2,13 @@ package com.techshop.admin.user.services.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.techshop.admin.exception.CategoryNotFoundException;
 import com.techshop.admin.user.repositories.CategoryRepository;
 import com.techshop.admin.user.services.CategoryService;
 import com.techshop.common.entity.Category;
@@ -104,6 +106,18 @@ public class CategoryServiceImpl implements CategoryService {
 	@Override
 	public Category save(Category category) {
 		return categoryRepository.save(category);
+	}
+
+	@Override
+	public Category findById(Integer id) throws CategoryNotFoundException{
+		Category category = new Category();
+		
+		try {
+			return categoryRepository.findById(id).get();
+		} catch (NoSuchElementException e) {
+			throw new CategoryNotFoundException("Could not find any category with Category: " + category.getName());
+		}
+		
 	}
 
 }

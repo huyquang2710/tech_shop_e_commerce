@@ -40,7 +40,7 @@
 						<select class="form-control" th:field="*{parent}">
 							<option value="0">[No Parent]</option>
 							
-							<th:block th:each="category:  ${categoriesList}">
+							<th:block  th:each="category:  ${categoriesList}">
 								<option th:value="${category.id}">[[${category.name}]]</option>
 							</th:block>
 						</select>
@@ -51,9 +51,10 @@
 					<label class="col-sm-4 col-form-label">Image: </label>
 					<div class="col-sm-8">
 						<input type="hidden" th:field="*{image}" />
-						<input name="fileImage" type="file" id="fileImage" accept="image/png, image/jpeg" class="mb-2" required="required" />
+						<input name="fileImage" type="file" id="fileImage" accept="image/png, image/jpeg" class="mb-2" 
+								th:required="${category.photosImagePath == null}" />
 						<div class="mt-2">
-							<img class="img-fluid" alt="Image view" id="thumbnail" th:src="@{/images/image-thumbnail.png}" />
+							<img class="img-fluid" alt="Image view" id="thumbnail" th:src="@{${category.photosImagePath}}" />
 						</div>
 					</div>
 				</div>

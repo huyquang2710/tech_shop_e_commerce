@@ -2,6 +2,7 @@ package com.techshop.admin.user.services;
 
 import java.util.List;
 
+import com.techshop.admin.exception.CategoryNotFoundException;
 import com.techshop.common.entity.Category;
 
 public interface CategoryService {
@@ -11,4 +12,5 @@ public interface CategoryService {
 	
 	Category save(Category category);
 	
+	Category findById(Integer id) throws CategoryNotFoundException;
 }
