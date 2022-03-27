@@ -26,7 +26,7 @@ public class Category {
 	@Column(length = 64, nullable = false, unique = true)
 	private String alias;
 	
-	@Column(length = 128, nullable = false, unique = true)
+	@Column(length = 128, nullable = false)
 	private String image;
 	
 	private boolean enabled;
@@ -94,8 +94,6 @@ public class Category {
 		this.children = children;
 	}
 
-	public Category() {
-	}
 	public Category(String name) {
 		this.name = name;
 		this.alias = name;
@@ -108,6 +106,9 @@ public class Category {
 
 	public Category(int id) {
 		this.id = id;
+	}
+
+	public Category() {
 	}
 	
 }

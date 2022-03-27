@@ -3,6 +3,7 @@ package com.techshop.admin.category;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
+import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,19 +22,50 @@ public class CategoryRepositoryTest {
 	@Autowired
 	private CategoryRepository categoryRepository;
 	
-	@Test
+	@Test 
 	public void testCreateCategory() {
-		Category category = new Category("Computers");
+		Category category = new Category("Electronics");
 		Category savedCategory = categoryRepository.save(category);
 		
 		assertThat(savedCategory.getId()).isGreaterThan(0);
 	}
 	@Test
 	public void testCreateSubCategory() {
-		Category parent = new Category(1);
+		Category parent = new Category(2);
 		Category laptops = new Category("Laptops", parent);
 		Category components = new Category("Computer Components", parent);
 		
 		categoryRepository.saveAll(List.of(laptops, components));
+	}
+	
+	@Test
+	public void testPrintHierarchicalCategories() {
+		Iterable<Category> categories = categoryRepository.findAll();
+		
+		for(Category category: categories) {
+			if(category.getParent() == null) {
+				System.out.println(category.getName());
+				
+				Set<Category> children = category.getChildren();
+				
+				for(Category subCategory : children) {
+					System.out.println("--" + subCategory.getName());
+					printChildren(subCategory, 1);
+				}
+			}
+		}
+	}
+	private void printChildren(Category parent, int subLevel) {
+		int newSubLevel = subLevel + 1;
+		Set<Category> children = parent.getChildren();
+		
+		for(Category subCategory : children) {
+			for(int i = 0; i < newSubLevel; i++) {
+				System.out.println("--");
+			}
+			System.out.println(subCategory.getName());
+			
+			printChildren(subCategory, newSubLevel);
+		}
 	}
 }

@@ -20,7 +20,18 @@ public class CategoryController {
 	@GetMapping
 	public String listAll(Model model) {
 		List<Category> listCategories = categoryService.listAll();
+		
 		model.addAttribute("category", listCategories);
 		return "categories/categories";
+	}
+	
+	@GetMapping("/new")
+	public String categoryForm(Model model) {
+		List<Category> categoriesList = categoryService.listCategoriesUsedInForm();
+		
+		model.addAttribute("categoriesList", categoriesList);
+		model.addAttribute("category", new Category());
+		model.addAttribute("pageTitle", "New Categories");
+		return "categories/categories_form";
 	}
 }

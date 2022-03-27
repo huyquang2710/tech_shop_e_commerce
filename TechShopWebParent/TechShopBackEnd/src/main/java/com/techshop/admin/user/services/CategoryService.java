@@ -6,4 +6,6 @@ import com.techshop.common.entity.Category;
 
 public interface CategoryService {
 	List<Category> listAll();
+	
+	List<Category> listCategoriesUsedInForm();
 }

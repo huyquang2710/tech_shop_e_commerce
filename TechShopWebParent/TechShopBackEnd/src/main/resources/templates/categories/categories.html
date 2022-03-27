@@ -12,16 +12,16 @@
 		<div>
 			<h2>Manage Categories</h2>
 			<!-- create new -->
-			<a th:href="@{/category/new}">Create New Category</a>
+			<a th:href="@{/categories/new}">Create New Category</a>
 			&nbsp;|&nbsp;
 			<!-- csv --> 
-			<a th:href="@{/category/export/csv}">Export CSV</a>
+			<a th:href="@{/categories/export/csv}">Export CSV</a>
 			&nbsp;|&nbsp;
 			<!-- excel --> 
-			<a th:href="@{/category/export/excel}">Export Excel</a>
+			<a th:href="@{/categories/export/excel}">Export Excel</a>
 			&nbsp;|&nbsp;
 			<!-- pdf --> 
-			<a th:href="@{/category/export/pdf}">Export Pdf</a>
+			<a th:href="@{/categories/export/pdf}">Export Pdf</a>
 		</div>
 		
 		<!-- message -->
@@ -31,7 +31,7 @@
 
 		<!-- search -->
 		<div class="">
-			<form th:action="@{/category/page/1}" class="form-inline m-3">
+			<form th:action="@{/categories/page/1}" class="form-inline m-3">
 				<input type="hidden" name="sortField" th:value="${sortField}" />
 				<input type="hidden" name="sortDir" th:value="${sortDir}" />
 				Filter:&nbsp;
