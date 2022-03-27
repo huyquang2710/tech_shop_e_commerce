@@ -52,6 +52,7 @@
 						<th>Category Name</th>
 						<th>Alias</th>
 						<th>Enabled</th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -63,8 +64,19 @@
 						<td>[[${category.name}]]</td>
 						<td>[[${category.alias}]]</td>
 						<td>
-							<a title="Disable this category"
+							<a title="Disable this category" th:if="${category.enabled == true}"
+								th:href="@{'/categories/' + ${category.id} + '/enabled/false'}"
 								class="fas fa-check-circle fa-2x icon-green"></a>
+							<a title="Enable this category" th:if="${category.enabled == false}"
+								th:href="@{'/uategories/' + ${category.id} + '/enabled/true'}"
+								class="fas fa-circle fa-2x icon-dark"></a>
+						</td>
+						<td>
+							<a href="" class="fas fa-edit fa-2x icon-green" th:href="@{'/users/edit/' + ${category.id}}"
+								title="Edit Category"></a>
+							&nbsp;
+							<a class="fas fa-trash fa-2x icon-dark link-delete"
+								th:href="@{'/users/delete/' + ${category.id}}	" title="Delete Category"></a>
 						</td>
 					</tr>
 				</tbody>

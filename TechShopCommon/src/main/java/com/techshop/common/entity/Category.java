@@ -108,7 +108,23 @@ public class Category {
 		this.id = id;
 	}
 
-	public Category() {
+	public Category() {	
+	}
+	
+	public static Category copyIdAndName(Category category) {
+		Category copy = new Category();
+		copy.setId(category.getId());
+		copy.setName(category.getName());
+		
+		return copy;
+	}
+	
+	public static Category copyIdAndName(Integer id, String name) {
+		Category copy = new Category();
+		copy.setId(id);
+		copy.setName(name);
+		
+		return copy;
 	}
 	
 }

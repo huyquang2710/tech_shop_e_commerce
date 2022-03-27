@@ -33,13 +33,13 @@ public class CategoryServiceImpl implements CategoryService {
 
 		for (Category category : categoriesInDB) {
 			if (category.getParent() == null) {
-				categoriesUserdInForm.add(new Category(category.getName()));
+				categoriesUserdInForm.add(Category.copyIdAndName(category));
 
 				Set<Category> children = category.getChildren();
 
 				for (Category subCategory : children) {
 					String name = "--" + subCategory.getName();
-					categoriesUserdInForm.add(new Category(name));
+					categoriesUserdInForm.add(Category.copyIdAndName(subCategory.getId(), name));
 
 					listChildren(categoriesUserdInForm, subCategory, 1);
 				}
@@ -59,10 +59,15 @@ public class CategoryServiceImpl implements CategoryService {
 				name += "--";
 			}
 			name += subCategory.getName();
-			categoriesUserdInForm.add(new Category(name));
+			categoriesUserdInForm.add(Category.copyIdAndName(subCategory.getId(), name));
 			
 			listChildren(categoriesUserdInForm, subCategory, newSubLevel);
 		}
+	}
+
+	@Override
+	public Category save(Category category) {
+		return categoryRepository.save(category);
 	}
 
 }
