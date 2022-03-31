@@ -92,22 +92,7 @@
 		</form>
 
 		<!-- modal -->
-		<div class="modal fade text-center" id="modalDialog">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="model-header">
-						<h4 class="model-title" id="modelTitle">Warning</h4>
-						<button class="close" type="button" data-dimiss="modal">&times;</button>
-					</div>
-					<div class="modal-body">
-						<span id="modalBody"></span>
-					</div>
-					<div class="modal-footer">
-						<button class="btn btn-danger" type="button" data-dimiss="modal">Close</button>
-					</div>
-				</div>
-			</div>
-		</div>
+		<div th:replace="modal_fragments :: modal_dialog"></div>
 
 	<div th:replace="fragments :: footer"></div>
 	</div>
@@ -125,22 +110,17 @@
 				if (response == "OK") {
 					form.submit();
 				} else if (response == "Duplicated") {
-					showModalDialog("Warning", "There is another user having the mail: " + userEmail);
+					showWarningDialog("There is another user having the mail: " + userEmail);
 				} else {
-					showModalDialog("Error", "Unknown response from server");
+					showErrorDialog("Unknown response from server");
 				}
 			}).fail(function () {
-				showModalDialog("Error", "Could not connect to the server");
+				showErrorDialog("Could not connect to the server");
 			});
 
 			return false;
 		}
 
-		function showModalDialog(title, message) {
-			$("#modalTitle").text(title);
-			$("#modalBody").text(message);
-			$("#modalDialog").modal();
-		}
 	</script>
 	<script th:src="@{/js/common_form.js}"></script>
 </body>

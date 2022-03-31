@@ -28,3 +28,15 @@ $(document).ready(function () {
 			};
 			reader.readAsDataURL(file);
 		}
+
+		function showModalDialog(title, message) {
+			$("#modalTitle").text(title);
+			$("#modalBody").text(message);
+			$("#modalDialog").modal();
+		}
+		function showErrorModal() {
+			showModalDialog("Error", message);
+		}
+		function showWarningModal() {
+			showModalDialog("Warning", message);
+		}

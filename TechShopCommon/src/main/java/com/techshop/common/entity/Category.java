@@ -147,6 +147,12 @@ public class Category {
 		return copyName;
 	}
 
+	public Category(Integer id, String name, String alias) {
+		this.id = id;
+		this.name = name;
+		this.alias = alias;
+	}
+
 	@Transient
 	public String getPhotosImagePath() {
 		if (id == null || image == null)

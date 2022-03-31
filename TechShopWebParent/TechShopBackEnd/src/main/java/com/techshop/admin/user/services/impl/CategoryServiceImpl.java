@@ -120,4 +120,26 @@ public class CategoryServiceImpl implements CategoryService {
 		
 	}
 
+	//check unique alias
+	@Override
+	public String checkUnique(Integer id, String name, String alias) {
+		boolean isCreatingNew = (id == null || id == 0);
+		
+		Category categoryByName = categoryRepository.findByName(name);
+		
+		if(isCreatingNew) {
+			if(categoryByName != null) {
+				return "Duplicate Name";
+			} else {
+				Category categoryByAlias = categoryRepository.findByName(alias);
+				if(categoryByAlias != null) {
+					return "Duplicate Alias";
+				}
+			}
+		} else {
+			
+		}
+		return "OK";
+	}
+	
 }

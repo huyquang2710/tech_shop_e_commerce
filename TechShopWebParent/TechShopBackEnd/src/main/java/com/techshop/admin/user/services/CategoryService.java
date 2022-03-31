@@ -13,4 +13,6 @@ public interface CategoryService {
 	Category save(Category category);
 	
 	Category findById(Integer id) throws CategoryNotFoundException;
+	
+	String checkUnique(Integer id, String name, String alias);
 }

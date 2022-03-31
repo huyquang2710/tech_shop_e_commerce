@@ -1,0 +1,524 @@
+2022-03-27 13:12:24.670  WARN 11092 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 13:12:26.517  INFO 11092 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 6.013 seconds (JVM running for 7.914)
+2022-03-27 13:16:06.818  INFO 7816 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 7816 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 13:16:06.820 DEBUG 7816 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 13:16:06.820  INFO 7816 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 13:16:08.421  WARN 7816 --- [restartedMain] o.a.c.c.C.[.[.[/TechShopAdmin]           : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [B2AFDBDF263057C1BE45B98DC281121E]
+2022-03-27 13:16:10.009  WARN 7816 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 13:16:11.511  INFO 7816 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 5.117 seconds (JVM running for 6.075)
+2022-03-27 13:23:59.930  INFO 7816 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 7816 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 13:23:59.930 DEBUG 7816 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 13:23:59.931  INFO 7816 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 13:24:00.505  WARN 7816 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 13:24:01.140  INFO 7816 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.245 seconds (JVM running for 475.703)
+2022-03-27 13:24:14.168  INFO 7816 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 7816 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 13:24:14.169 DEBUG 7816 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 13:24:14.169  INFO 7816 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 13:24:14.675  WARN 7816 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 13:24:15.227  INFO 7816 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.087 seconds (JVM running for 489.79)
+2022-03-27 13:24:33.096 ERROR 7816 --- [http-nio-8080-exec-1] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-1] Exception processing template "categories/categories": An error happened during template parsing (template: "class path resource [templates/categories/categories.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/categories/categories.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:366) ~[thymeleaf-spring5-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring5-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1401) ~[spring-webmvc-5.3.15.jar:5.3.15]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1145) ~[spring-webmvc-5.3.15.jar:5.3.15]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1084) ~[spring-webmvc-5.3.15.jar:5.3.15]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.15.jar:5.3.15]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.15.jar:5.3.15]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.15.jar:5.3.15]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.56.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.15.jar:5.3.15]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.56.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:67) ~[spring-webmvc-5.3.15.jar:5.3.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:219) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:213) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.15.jar:5.3.15]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.15.jar:5.3.15]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.15.jar:5.3.15]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354) ~[spring-web-5.3.15.jar:5.3.15]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267) ~[spring-web-5.3.15.jar:5.3.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.15.jar:5.3.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.15.jar:5.3.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.15.jar:5.3.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.15.jar:5.3.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.15.jar:5.3.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.15.jar:5.3.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "category.photos == null" (template: "categories/categories" - line 62, col 14)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	... 92 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "category.photos == null" (template: "categories/categories" - line 62, col 14)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:292) ~[thymeleaf-spring5-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:125) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.standard.processor.StandardIfTagProcessor.isVisible(StandardIfTagProcessor.java:59) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardConditionalVisibilityTagProcessor.doProcess(AbstractStandardConditionalVisibilityTagProcessor.java:61) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.engine.Model.process(Model.java:282) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.engine.Model.process(Model.java:290) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.processIterationModel(IteratedGatheringModelProcessable.java:367) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.process(IteratedGatheringModelProcessable.java:221) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleCloseElement(ProcessorTemplateHandler.java:1640) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleCloseElementEnd(TemplateHandlerAdapterMarkupHandler.java:388) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:322) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleCloseElementEnd(OutputExpressionInlinePreProcessorHandler.java:220) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:164) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.attoparser.HtmlElement.handleCloseElementEnd(HtmlElement.java:169) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleCloseElementEnd(HtmlMarkupHandler.java:412) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleCloseElementEnd(MarkupEventProcessorHandler.java:473) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseCloseElement(ParsingElementMarkupUtil.java:201) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	... 94 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'photos' cannot be found on object of type 'com.techshop.common.entity.Category' - maybe not public or not valid?
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:217) ~[spring-expression-5.3.15.jar:5.3.15]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104) ~[spring-expression-5.3.15.jar:5.3.15]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51) ~[spring-expression-5.3.15.jar:5.3.15]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406) ~[spring-expression-5.3.15.jar:5.3.15]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92) ~[spring-expression-5.3.15.jar:5.3.15]
+	at org.springframework.expression.spel.ast.OpEQ.getValueInternal(OpEQ.java:42) ~[spring-expression-5.3.15.jar:5.3.15]
+	at org.springframework.expression.spel.ast.OpEQ.getValueInternal(OpEQ.java:32) ~[spring-expression-5.3.15.jar:5.3.15]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112) ~[spring-expression-5.3.15.jar:5.3.15]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337) ~[spring-expression-5.3.15.jar:5.3.15]
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:265) ~[thymeleaf-spring5-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	... 121 common frames omitted
+
+2022-03-27 13:24:33.101 ERROR 7816 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/TechShopAdmin] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/categories/categories.html]")] with root cause
+
+org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'photos' cannot be found on object of type 'com.techshop.common.entity.Category' - maybe not public or not valid?
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:217) ~[spring-expression-5.3.15.jar:5.3.15]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104) ~[spring-expression-5.3.15.jar:5.3.15]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51) ~[spring-expression-5.3.15.jar:5.3.15]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406) ~[spring-expression-5.3.15.jar:5.3.15]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92) ~[spring-expression-5.3.15.jar:5.3.15]
+	at org.springframework.expression.spel.ast.OpEQ.getValueInternal(OpEQ.java:42) ~[spring-expression-5.3.15.jar:5.3.15]
+	at org.springframework.expression.spel.ast.OpEQ.getValueInternal(OpEQ.java:32) ~[spring-expression-5.3.15.jar:5.3.15]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112) ~[spring-expression-5.3.15.jar:5.3.15]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337) ~[spring-expression-5.3.15.jar:5.3.15]
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:265) ~[thymeleaf-spring5-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:125) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.standard.processor.StandardIfTagProcessor.isVisible(StandardIfTagProcessor.java:59) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardConditionalVisibilityTagProcessor.doProcess(AbstractStandardConditionalVisibilityTagProcessor.java:61) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.engine.Model.process(Model.java:282) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.engine.Model.process(Model.java:290) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.processIterationModel(IteratedGatheringModelProcessable.java:367) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.process(IteratedGatheringModelProcessable.java:221) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleCloseElement(ProcessorTemplateHandler.java:1640) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleCloseElementEnd(TemplateHandlerAdapterMarkupHandler.java:388) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:322) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleCloseElementEnd(OutputExpressionInlinePreProcessorHandler.java:220) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:164) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.attoparser.HtmlElement.handleCloseElementEnd(HtmlElement.java:169) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleCloseElementEnd(HtmlMarkupHandler.java:412) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleCloseElementEnd(MarkupEventProcessorHandler.java:473) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseCloseElement(ParsingElementMarkupUtil.java:201) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:366) ~[thymeleaf-spring5-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring5-3.0.14.RELEASE.jar:3.0.14.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1401) ~[spring-webmvc-5.3.15.jar:5.3.15]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1145) ~[spring-webmvc-5.3.15.jar:5.3.15]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1084) ~[spring-webmvc-5.3.15.jar:5.3.15]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.15.jar:5.3.15]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.15.jar:5.3.15]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.15.jar:5.3.15]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.56.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.15.jar:5.3.15]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.56.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:67) ~[spring-webmvc-5.3.15.jar:5.3.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:219) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:213) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.15.jar:5.3.15]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.15.jar:5.3.15]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.15.jar:5.3.15]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354) ~[spring-web-5.3.15.jar:5.3.15]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267) ~[spring-web-5.3.15.jar:5.3.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.15.jar:5.3.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.15.jar:5.3.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.15.jar:5.3.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.15.jar:5.3.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.15.jar:5.3.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.15.jar:5.3.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+
+2022-03-27 13:26:15.893  INFO 7816 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 7816 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 13:26:15.893 DEBUG 7816 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 13:26:15.893  INFO 7816 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 13:26:16.325  WARN 7816 --- [restartedMain] o.a.c.c.C.[.[.[/TechShopAdmin]           : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [480E3F10E4E5D96D8362734DEE9CA454]
+2022-03-27 13:26:16.523  WARN 7816 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 13:26:17.037  INFO 7816 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.173 seconds (JVM running for 611.601)
+2022-03-27 13:34:47.582  INFO 7816 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 7816 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 13:34:47.582 DEBUG 7816 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 13:34:47.582  INFO 7816 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 13:34:47.962  WARN 7816 --- [restartedMain] o.a.c.c.C.[.[.[/TechShopAdmin]           : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [F8FE2788477338BB6DD17966F6CE71C3]
+2022-03-27 13:34:48.112  WARN 7816 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 13:34:48.651  INFO 7816 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.098 seconds (JVM running for 1123.214)
+2022-03-27 13:41:32.326  INFO 12692 --- [main] c.t.a.category.CategoryRepositoryTest    : Starting CategoryRepositoryTest using Java 16.0.2 on Admin with PID 12692 (started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 13:41:32.331 DEBUG 12692 --- [main] c.t.a.category.CategoryRepositoryTest    : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 13:41:32.332  INFO 12692 --- [main] c.t.a.category.CategoryRepositoryTest    : No active profile set, falling back to default profiles: default
+2022-03-27 13:41:39.026  INFO 12692 --- [main] c.t.a.category.CategoryRepositoryTest    : Started CategoryRepositoryTest in 7.512 seconds (JVM running for 9.569)
+2022-03-27 14:17:25.672  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 14:17:25.673 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 14:17:25.673  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 14:17:29.141  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 14:17:30.697  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 5.445 seconds (JVM running for 6.817)
+2022-03-27 14:20:14.220  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 14:20:14.220 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 14:20:14.220  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 14:20:15.047  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 14:20:15.992  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.806 seconds (JVM running for 172.113)
+2022-03-27 14:23:28.482  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 14:23:28.483 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 14:23:28.483  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 14:23:28.827  WARN 6696 --- [restartedMain] o.a.c.c.C.[.[.[/TechShopAdmin]           : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [3367DAD4EF320C73076C88DEFB68CA4F]
+2022-03-27 14:23:29.002  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 14:23:29.588  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.138 seconds (JVM running for 365.71)
+2022-03-27 14:25:56.226  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 14:25:56.226 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 14:25:56.226  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 14:25:56.752  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 14:25:57.279  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.079 seconds (JVM running for 513.4)
+2022-03-27 14:26:08.251  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 14:26:08.252 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 14:26:08.252  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 14:26:08.727  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 14:26:09.225  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.031 seconds (JVM running for 525.347)
+2022-03-27 14:32:11.945  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 14:32:11.945 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 14:32:11.945  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 14:32:12.715  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 14:32:13.512  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.601 seconds (JVM running for 889.633)
+2022-03-27 14:32:21.446  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 14:32:21.446 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 14:32:21.446  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 14:32:21.979  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 14:32:22.545  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.124 seconds (JVM running for 898.666)
+2022-03-27 14:41:05.523  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 14:41:05.526 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 14:41:05.527  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 14:41:06.112  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 14:41:06.652  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.169 seconds (JVM running for 1422.773)
+2022-03-27 14:41:16.801  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 14:41:16.802 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 14:41:16.802  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 14:41:17.933  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 14:41:18.710  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 2.023 seconds (JVM running for 1434.831)
+2022-03-27 14:47:38.339  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 14:47:38.339 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 14:47:38.339  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 14:47:38.786  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 14:47:39.402  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.088 seconds (JVM running for 1815.523)
+2022-03-27 14:51:44.992  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 14:51:44.993 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 14:51:44.993  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 14:51:45.416  WARN 6696 --- [restartedMain] o.a.c.c.C.[.[.[/TechShopAdmin]           : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [E7EBD26DEB1A382DC88B1187A784625A]
+2022-03-27 14:51:45.577  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 14:51:46.170  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.225 seconds (JVM running for 2062.291)
+2022-03-27 14:54:52.427  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 14:54:52.428 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 14:54:52.428  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 14:54:52.788  WARN 6696 --- [restartedMain] o.a.c.c.C.[.[.[/TechShopAdmin]           : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [47F409CC62F14A753458664CEEE843F3]
+2022-03-27 14:54:52.964  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 14:54:53.645  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 2.078 seconds (JVM running for 2249.765)
+2022-03-27 15:22:35.902  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 15:22:35.902 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 15:22:35.902  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 15:22:36.592  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 15:22:37.239  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.376 seconds (JVM running for 3913.36)
+2022-03-27 15:22:48.088  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 15:22:48.088 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 15:22:48.088  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 15:22:48.498  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 15:22:48.993  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 0.929 seconds (JVM running for 3925.114)
+2022-03-27 15:26:36.571  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 15:26:36.571 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 15:26:36.571  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 15:26:37.026  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 15:26:37.677  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.132 seconds (JVM running for 4153.798)
+2022-03-27 15:27:10.340  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 15:27:10.340 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 15:27:10.340  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 15:27:10.836  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 15:27:11.396  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.085 seconds (JVM running for 4187.518)
+2022-03-27 15:31:12.648  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 15:31:12.648 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 15:31:12.648  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 15:31:12.981  WARN 6696 --- [restartedMain] o.a.c.c.C.[.[.[/TechShopAdmin]           : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [6FE40AA2460A1881304EF9D846C8A1EF]
+2022-03-27 15:31:13.123  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 15:31:13.652  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.043 seconds (JVM running for 4429.773)
+2022-03-27 15:32:48.368  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 15:32:48.368 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 15:32:48.368  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 15:32:48.722  WARN 6696 --- [restartedMain] o.a.c.c.C.[.[.[/TechShopAdmin]           : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [79430B7CA3ACBD8BAC6189AEA1126E6F]
+2022-03-27 15:32:48.867  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 15:32:49.476  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.143 seconds (JVM running for 4525.597)
+2022-03-27 15:35:20.133  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 15:35:20.133 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 15:35:20.133  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 15:35:20.462  WARN 6696 --- [restartedMain] o.a.c.c.C.[.[.[/TechShopAdmin]           : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [27507F62CAF1D9F8BDF99C6D17DC2727]
+2022-03-27 15:35:20.605  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 15:35:21.153  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.062 seconds (JVM running for 4677.275)
+2022-03-27 15:41:24.220  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 15:41:24.220 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 15:41:24.221  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 15:41:24.834  WARN 6696 --- [restartedMain] o.a.c.c.C.[.[.[/TechShopAdmin]           : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [E8E3D464A744A8673684EE1BB9040BD2]
+2022-03-27 15:41:24.975  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 15:41:25.505  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.314 seconds (JVM running for 5041.626)
+2022-03-27 15:54:05.343  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 15:54:05.343 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 15:54:05.343  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 15:54:05.912  WARN 6696 --- [restartedMain] o.a.c.c.C.[.[.[/TechShopAdmin]           : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [AA58C5DB16F069F64B7AD26F8A6CBE12]
+2022-03-27 15:54:06.059  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 15:54:06.731  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.421 seconds (JVM running for 5802.852)
+2022-03-27 15:54:56.186  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 15:54:56.186 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 15:54:56.186  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 15:54:56.856  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 15:54:57.573  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.419 seconds (JVM running for 5853.693)
+2022-03-27 15:59:16.847  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 15:59:16.847 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 15:59:16.848  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 15:59:17.437  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 15:59:18.217  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.411 seconds (JVM running for 6114.339)
+2022-03-27 15:59:34.575  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 15:59:34.576 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 15:59:34.576  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 15:59:35.363  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 15:59:36.201  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.654 seconds (JVM running for 6132.322)
+2022-03-27 15:59:37.797  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 15:59:37.797 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 15:59:37.797  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 15:59:38.333  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 15:59:38.932  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.161 seconds (JVM running for 6135.053)
+2022-03-27 16:07:54.352  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 16:07:54.352 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 16:07:54.352  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 16:07:54.852  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 16:07:55.435  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.122 seconds (JVM running for 6631.556)
+2022-03-27 16:08:07.522  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 16:08:07.522 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 16:08:07.522  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 16:08:08.077  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 16:08:08.696  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.203 seconds (JVM running for 6644.817)
+2022-03-27 16:12:55.729  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 16:12:55.729 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 16:12:55.729  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 16:12:56.089  WARN 6696 --- [restartedMain] o.a.c.c.C.[.[.[/TechShopAdmin]           : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [08BA7931BC162785A8CD5F5A2F1E665D]
+2022-03-27 16:12:56.219  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 16:12:56.798  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.095 seconds (JVM running for 6932.919)
+2022-03-27 16:16:40.526  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 16:16:40.527 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 16:16:40.527  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 16:16:41.003  WARN 6696 --- [restartedMain] o.a.c.c.C.[.[.[/TechShopAdmin]           : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [E6495BB338593C0C2C7361BB8289A1E6]
+2022-03-27 16:16:41.173  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 16:16:41.927  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.436 seconds (JVM running for 7158.048)
+2022-03-27 16:19:08.164  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 6696 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-27 16:19:08.164 DEBUG 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-27 16:19:08.164  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-27 16:19:08.537  WARN 6696 --- [restartedMain] o.a.c.c.C.[.[.[/TechShopAdmin]           : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [C2BC204FF95CCBDF1FE72D76D5F3D7B1]
+2022-03-27 16:19:08.692  WARN 6696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-27 16:19:09.378  INFO 6696 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.241 seconds (JVM running for 7305.498)
+2022-03-30 06:14:33.358  INFO 2256 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 2256 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-30 06:14:33.363 DEBUG 2256 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-30 06:14:33.363  INFO 2256 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-30 06:14:36.113  WARN 2256 --- [restartedMain] o.a.c.c.C.[.[.[/TechShopAdmin]           : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [1B60B537286C5D74A7BF87ACD92844E9]
+2022-03-30 06:14:38.530  WARN 2256 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-30 06:14:41.042  INFO 2256 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 8.885 seconds (JVM running for 11.052)
+2022-03-30 18:05:04.122  INFO 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 1892 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-30 18:05:04.123 DEBUG 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-30 18:05:04.124  INFO 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-30 18:05:08.824  WARN 1892 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-30 18:05:10.666  INFO 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 7.145 seconds (JVM running for 9.116)
+2022-03-30 18:06:30.042  INFO 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 1892 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-30 18:06:30.043 DEBUG 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-30 18:06:30.043  INFO 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-30 18:06:30.581  WARN 1892 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-30 18:06:31.147  INFO 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.136 seconds (JVM running for 89.597)
+2022-03-30 18:09:52.205  INFO 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 1892 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-30 18:09:52.206 DEBUG 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-30 18:09:52.206  INFO 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-30 18:09:52.802  WARN 1892 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-30 18:09:53.427  INFO 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.249 seconds (JVM running for 291.878)
+2022-03-30 18:10:47.629  INFO 15796 --- [main] c.t.a.category.CategoryRepositoryTest    : Starting CategoryRepositoryTest using Java 16.0.2 on Admin with PID 15796 (started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-30 18:10:47.631 DEBUG 15796 --- [main] c.t.a.category.CategoryRepositoryTest    : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-30 18:10:47.631  INFO 15796 --- [main] c.t.a.category.CategoryRepositoryTest    : No active profile set, falling back to default profiles: default
+2022-03-30 18:10:55.224  INFO 15796 --- [main] c.t.a.category.CategoryRepositoryTest    : Started CategoryRepositoryTest in 8.334 seconds (JVM running for 11.298)
+2022-03-30 18:15:25.858  INFO 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 1892 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-30 18:15:25.858 DEBUG 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-30 18:15:25.858  INFO 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-30 18:15:26.549  WARN 1892 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-30 18:15:27.104  INFO 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.272 seconds (JVM running for 625.554)
+2022-03-30 18:16:20.634  INFO 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 1892 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-30 18:16:20.635 DEBUG 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-30 18:16:20.635  INFO 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-30 18:16:21.157  WARN 1892 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-30 18:16:21.783  INFO 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.181 seconds (JVM running for 680.234)
+2022-03-30 18:20:38.912  INFO 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 1892 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-30 18:20:38.912 DEBUG 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-30 18:20:38.912  INFO 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-30 18:20:40.126  WARN 1892 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-30 18:20:40.808  INFO 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.951 seconds (JVM running for 939.259)
+2022-03-30 18:22:55.352  INFO 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 1892 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-30 18:22:55.352 DEBUG 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-30 18:22:55.353  INFO 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-30 18:22:56.059  WARN 1892 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-30 18:22:56.618  INFO 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.305 seconds (JVM running for 1075.069)
+2022-03-30 19:15:13.800  INFO 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 1892 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-03-30 19:15:13.801 DEBUG 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-03-30 19:15:13.801  INFO 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-03-30 19:15:14.799  WARN 1892 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-30 19:15:15.589  INFO 1892 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.843 seconds (JVM running for 4214.04)
