@@ -2,7 +2,9 @@ package com.techshop.admin.user.controllers;
 
 import java.io.IOException;
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -24,56 +26,58 @@ import com.techshop.common.entity.Category;
 public class CategoryController {
 	@Autowired
 	private CategoryService categoryService;
-	
+
 	@GetMapping
-	public String listAll(Model model) {
-		List<Category> listCategories = categoryService.listAll();
-		
+	public String listAll(Model model, @Param("sortDir") String sortDir) {
+
+		List<Category> listCategories = categoryService.listAll(sortDir);
+
 		model.addAttribute("category", listCategories);
 		return "categories/categories";
 	}
-	
+
 	@GetMapping("/new")
 	public String categoryForm(Model model) {
 		List<Category> categoriesList = categoryService.listCategoriesUsedInForm();
-		
+
 		model.addAttribute("categoriesList", categoriesList);
 		model.addAttribute("category", new Category());
 		model.addAttribute("pageTitle", "New Categories");
 		return "categories/categories_form";
 	}
-	
+
 	@PostMapping("/save")
-	public String saveCategory(Category category, @RequestParam("fileImage") MultipartFile multipartFile, RedirectAttributes attributes) throws IOException {
-		if(!multipartFile.isEmpty()) {
+	public String saveCategory(Category category, @RequestParam("fileImage") MultipartFile multipartFile,
+			RedirectAttributes attributes) throws IOException {
+		if (!multipartFile.isEmpty()) {
 			String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
 			category.setImage(fileName);
-			
+
 			Category saveCategory = categoryService.save(category);
 			String uploadDir = "category-images/" + saveCategory.getId();
-			
+
 			FileUploadUtil.cleanDir(uploadDir);
 			FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
-			
+
 		} else {
 			categoryService.save(category);
 		}
-		
+
 		attributes.addFlashAttribute("message", "The category has been saved successfully");
 		return "redirect:/categories";
 	}
-	
-	//update
+
+	// update
 	@GetMapping("/edit/{id}")
 	public String editCategory(@PathVariable("id") Integer id, Model model, RedirectAttributes attributes) {
 		try {
 			Category category = categoryService.findById(id);
 			List<Category> listCategories = categoryService.listCategoriesUsedInForm();
-			
+
 			model.addAttribute("category", category);
 			model.addAttribute("categoriesList", listCategories);
 			model.addAttribute("pageTitle", "Edit Category (Name: " + category.getName() + ")");
-			
+
 			return "categories/categories_form";
 		} catch (CategoryNotFoundException e) {
 			attributes.addFlashAttribute("message", e.getMessage());

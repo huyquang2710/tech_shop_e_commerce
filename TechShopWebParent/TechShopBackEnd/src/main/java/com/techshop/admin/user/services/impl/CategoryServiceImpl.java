@@ -1,11 +1,15 @@
 package com.techshop.admin.user.services.impl;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.techshop.admin.exception.CategoryNotFoundException;
@@ -20,8 +24,19 @@ public class CategoryServiceImpl implements CategoryService {
 	private CategoryRepository categoryRepository;
 
 	@Override
-	public List<Category> listAll() {
-		 List<Category> rootCategories = categoryRepository.findRootCategories();
+	public List<Category> listAll(String sortDir) {
+		Sort sort = Sort.by("name");
+		if (sortDir == null || sortDir.isEmpty()) {
+			sort = sort.ascending();
+		} else if (sortDir.equals("asc")) {
+			sort = sort.ascending();
+		} else if (sortDir.equals("desc")) {
+			sort = sort.descending();
+		} 
+		
+		 List<Category> rootCategories = categoryRepository.findRootCategories(Sort.by("name").ascending());
+		 
+		 
 		 
 		 return listHierarchicalCategories(rootCategories);
 	}
@@ -32,7 +47,7 @@ public class CategoryServiceImpl implements CategoryService {
 		for(Category rootCategory : rootCategories ) {
 			hierarchicalCategories.add(Category.copyAll(rootCategory));
 			
-			Set<Category> children = rootCategory.getChildren();
+			Set<Category> children = sortubCategories(rootCategory.getChildren());
 			
 			for(Category subCategory : children) {
 				String name = "--" + subCategory.getName();
@@ -67,13 +82,13 @@ public class CategoryServiceImpl implements CategoryService {
 
 		List<Category> categoriesUserdInForm = new ArrayList<>();
 
-		Iterable<Category> categoriesInDB = categoryRepository.findAll();
+		Iterable<Category> categoriesInDB = categoryRepository.findRootCategories(Sort.by("name").ascending());
 
 		for (Category category : categoriesInDB) {
 			if (category.getParent() == null) {
 				categoriesUserdInForm.add(Category.copyIdAndName(category));
 
-				Set<Category> children = category.getChildren();
+				Set<Category> children = sortubCategories(category.getChildren());
 
 				for (Category subCategory : children) {
 					String name = "--" + subCategory.getName();
@@ -89,7 +104,7 @@ public class CategoryServiceImpl implements CategoryService {
 	
 	private void listSubCategoriesUsedInForm(List<Category> categoriesUserdInForm, Category parent, int subLevel) {
 		int newSubLevel = subLevel + 1;
-		Set<Category> children = parent.getChildren();
+		Set<Category> children = sortubCategories(parent.getChildren());
 		
 		for(Category subCategory : children) {
 			String name = "";
@@ -142,4 +157,22 @@ public class CategoryServiceImpl implements CategoryService {
 		return "OK";
 	}
 	
+	private SortedSet<Category> sortubCategories(Set<Category> children) {
+		return sortubCategories(children, "asc");
+	}
+	
+	private SortedSet<Category> sortubCategories(Set<Category> children, String sortDir) {
+		SortedSet<Category> sortedChildren = new TreeSet<>(new Comparator<Category>() {
+			@Override
+			public int compare(Category o1, Category o2) {
+				if(sortDir.equals("asc")) {
+					return o1.getName().compareTo(o2.getName());
+				} else {
+					return o2.getName().compareTo(o1.getName());
+				}
+			}
+		});
+		sortedChildren.addAll(children);
+		return sortedChildren;
+	}
 }

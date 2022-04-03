@@ -6,7 +6,7 @@ import com.techshop.admin.exception.CategoryNotFoundException;
 import com.techshop.common.entity.Category;
 
 public interface CategoryService {
-	List<Category> listAll();
+	List<Category> listAll(String sortDir);
 	
 	List<Category> listCategoriesUsedInForm();
 	
