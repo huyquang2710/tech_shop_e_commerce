@@ -15,4 +15,6 @@ public interface CategoryService {
 	Category findById(Integer id) throws CategoryNotFoundException;
 	
 	String checkUnique(Integer id, String name, String alias);
+	
+	void udpateEnaledStatus(Integer id, boolean enabled);
 }

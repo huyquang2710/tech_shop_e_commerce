@@ -66,12 +66,13 @@
 						<td>[[${category.name}]]</td>
 						<td>[[${category.alias}]]</td>
 						<td>
-							<a title="Disable this category" th:if="${category.enabled == true}"
+							<a title="Disable this user" th:if="${category.enabled == true}"
 								th:href="@{'/categories/' + ${category.id} + '/enabled/false'}"
 								class="fas fa-check-circle fa-2x icon-green"></a>
-							<a title="Enable this category" th:if="${category.enabled == false}"
+							<a title="Enable this user" th:if="${category.enabled == false}"
 								th:href="@{'/categories/' + ${category.id} + '/enabled/true'}"
 								class="fas fa-circle fa-2x icon-dark"></a>
+							<!-- <div th:replace="fragments :: category_status" ></div> -->
 						</td>
 						<td>
 							<a href="" class="fas fa-edit fa-2x icon-green" th:href="@{'/categories/edit/' + ${category.id}}"

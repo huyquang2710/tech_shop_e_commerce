@@ -11,6 +11,7 @@ import java.util.TreeSet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.techshop.admin.exception.CategoryNotFoundException;
 import com.techshop.admin.user.repositories.CategoryRepository;
@@ -18,6 +19,7 @@ import com.techshop.admin.user.services.CategoryService;
 import com.techshop.common.entity.Category;
 
 @Service
+@Transactional
 public class CategoryServiceImpl implements CategoryService {
 
 	@Autowired
@@ -174,5 +176,10 @@ public class CategoryServiceImpl implements CategoryService {
 		});
 		sortedChildren.addAll(children);
 		return sortedChildren;
+	}
+
+	@Override
+	public void udpateEnaledStatus(Integer id, boolean enabled) {
+		categoryRepository.updatedEnabledStatus(id, enabled);
 	}
 }

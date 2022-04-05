@@ -77,11 +77,23 @@ public class CategoryController {
 			model.addAttribute("category", category);
 			model.addAttribute("categoriesList", listCategories);
 			model.addAttribute("pageTitle", "Edit Category (Name: " + category.getName() + ")");
-
+   
 			return "categories/categories_form";
 		} catch (CategoryNotFoundException e) {
 			attributes.addFlashAttribute("message", e.getMessage());
 			return "redirect:/categories";
 		}
+	}
+	
+	//update enabled stasus
+	@GetMapping("/{id}/enabled/{status}")
+	public String updateEnabledStatus(@PathVariable("id") Integer id, 
+			@PathVariable("status") boolean enabled, RedirectAttributes attributes) {
+		categoryService.udpateEnaledStatus(id, enabled);
+		String status = enabled ? "enabled" : "disabled";
+		String message = "The category has been updated " + status;
+		attributes.addFlashAttribute("message", message);
+		
+		return "redirect:/categories";
 	}
 }
