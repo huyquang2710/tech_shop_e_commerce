@@ -79,23 +79,7 @@
 			</div>
 		</form>
 
-		<!-- modal -->
-		<div class="modal fade text-center" id="modalDialog">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="model-header">
-						<h4 class="model-title" id="modelTitle">Warning</h4>
-						<button class="close" type="button" data-dimiss="modal">&times;</button>
-					</div>
-					<div class="modal-body">
-						<span id="modalBody"></span>
-					</div>
-					<div class="modal-footer">
-						<button class="btn btn-danger" type="button" data-dimiss="modal">Close</button>
-					</div>
-				</div>
-			</div>
-		</div>
+	<!-- modal -->	
 	<div th:replace="modal_fragments :: modal_dialog"></div>
 
 	<div th:replace="fragments :: footer"></div>
@@ -113,9 +97,17 @@
 
 			params = {id: catId, name: catName, alias: catAlias, _csrf: csrfValue};
 			$.post(url, params, function(response) {
-				alert(response);
+				if(response == "OK") {
+					form.submit();
+				} else if(response == "Duplicate Name") {
+					showWarningModal("There is another category having same name " + catName);
+				} else if(response == "Duplicate Alias") {
+					showWarningModal("There is another category having same alias " + catAlias);
+				} else {
+					showErrorModal("Unknown response from server");
+				}
 			}).fail(function() {
-				alert('failed');
+				alert('Could not connect to the server');
 			});
 
 			return false;
