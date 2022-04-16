@@ -41,4 +41,13 @@ public class FileUploadUtil {
 			System.out.println("Count not list directory: " + dirPath);
 		}
 	}
+	
+	public static void deleteDir(String dir) {
+		cleanDir(dir);
+		try {
+			Files.delete(Paths.get(dir));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }

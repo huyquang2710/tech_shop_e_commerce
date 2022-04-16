@@ -17,4 +17,6 @@ public interface CategoryService {
 	String checkUnique(Integer id, String name, String alias);
 	
 	void udpateEnaledStatus(Integer id, boolean enabled);
+	
+	void delete(Integer id) throws CategoryNotFoundException;
 }

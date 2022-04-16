@@ -47,4 +47,15 @@
 		th:href="@{'/categories/' + ${category.id} + '/enabled/true'}"
 		class="fas fa-circle fa-2x icon-dark"></a>
 </div>
+
+<div th:fragment="category_action" th:remove="tag">
+	<a href="" class="fas fa-edit fa-2x icon-green" th:href="@{'/categories/edit/' + ${category.id}}"
+		title="Edit Category"></a>
+		&nbsp;
+
+	<a class="fas fa-trash fa-2x icon-dark link-delete"
+		th:href="@{'/categories/delete/' + ${category.id}}" th:entityId="${category.id}" title="Delete Category"></a>
+
+</div>
 </body>
+</html>	

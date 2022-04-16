@@ -1,0 +1,62 @@
+2022-04-06 09:18:50.598  INFO 8584 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 8584 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-04-06 09:18:50.602 DEBUG 8584 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-04-06 09:18:50.602  INFO 8584 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-04-06 09:18:56.021  WARN 8584 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-04-06 09:18:58.320  WARN 8584 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2022-04-06 09:18:58.444 ERROR 8584 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2022-04-06 14:00:15.155  INFO 5076 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 5076 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-04-06 14:00:15.173 DEBUG 5076 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-04-06 14:00:15.173  INFO 5076 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-04-06 14:00:19.859  WARN 5076 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-04-06 14:00:23.506  WARN 5076 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2022-04-06 14:00:23.556 ERROR 5076 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2022-04-06 14:01:07.110  INFO 4624 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 4624 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-04-06 14:01:07.111 DEBUG 4624 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-04-06 14:01:07.111  INFO 4624 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-04-06 14:01:11.016  WARN 4624 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-04-06 14:01:12.896  WARN 4624 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2022-04-06 14:01:12.935 ERROR 4624 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2022-04-06 14:01:32.966  INFO 4552 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 4552 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-04-06 14:01:32.967 DEBUG 4552 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-04-06 14:01:32.968  INFO 4552 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-04-06 14:01:37.145  WARN 4552 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-04-06 14:01:39.265  INFO 4552 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 6.768 seconds (JVM running for 8.009)

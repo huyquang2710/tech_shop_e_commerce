@@ -66,50 +66,31 @@
 						<td>[[${category.name}]]</td>
 						<td>[[${category.alias}]]</td>
 						<td>
-							<a title="Disable this user" th:if="${category.enabled == true}"
-								th:href="@{'/categories/' + ${category.id} + '/enabled/false'}"
-								class="fas fa-check-circle fa-2x icon-green"></a>
-							<a title="Enable this user" th:if="${category.enabled == false}"
-								th:href="@{'/categories/' + ${category.id} + '/enabled/true'}"
-								class="fas fa-circle fa-2x icon-dark"></a>
-							<!-- <div th:replace="fragments :: category_status" ></div> -->
+							<div th:replace="fragments :: category_status" ></div>
 						</td>
 						<td>
-							<a href="" class="fas fa-edit fa-2x icon-green" th:href="@{'/categories/edit/' + ${category.id}}"
-								title="Edit Category"></a>
-							&nbsp;
-							<a class="fas fa-trash fa-2x icon-dark link-delete"
-								th:href="@{'/categories/delete/' + ${category.id}}	" title="Delete Category"></a>
+							<div th:replace="fragments :: category_action" ></div>
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
+	
+	<div th:replace="modal_fragments :: confirm_modal" ></div>
 
 	<div th:replace="fragments :: footer"></div>
 	
 	</div>
-
-	<!-- modal -->
-	<div class="modal fade text-center" id="confirmModal">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="model-header">
-					<h4 class="model-title" id="modelTitle">Delete Confirmation</h4>
-				</div>
-				<div class="modal-body">
-					<span id="modalBody"></span>
-				</div>
-				<div class="modal-footer">
-					<a href="" class="btn btn-success" id="yesBtn">Yes</a>
-					<button class="btn btn-danger" type="button" data-dismiss="modal">No</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
+	<script th:src="@{/js/common_list.js}"></script>
 	<script>
+	moduleURL = "[[@{/categories}]]";
+	
+	$(document).ready(function (){
+		$(".link-delete").on("click", function(e) {
+			e.preventDefault();
+			showDeleteConfirmModal($(this), 'category');
+		});
+	});
 	</script>
 </body>
 

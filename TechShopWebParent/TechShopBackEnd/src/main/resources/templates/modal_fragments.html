@@ -4,7 +4,7 @@
 <body>
 
 <!-- modal -->
-	<div  th:fragment="modal_dialog" class="modal fade text-center" id="confirmModal">
+	<div th:fragment="modal_dialog" class="modal fade text-center" id="confirmModal">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="model-header">
@@ -19,6 +19,27 @@
 			</div>
 		</div>
 	</div>
+	
+	
+<!-- modal -->
+	<div th:fragment="confirm_modal" class="modal fade text-center" id="confirmModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="model-header">
+					<h4 class="model-title" id="modelTitle">Delete Confirmation</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					<span id="confirmText"></span>
+				</div>
+				<div class="modal-footer">
+					<a class="btn btn-success" id="yesButton" >Yes</a>
+					<button class="btn btn-danger" type="button" data-dismiss="modal">No</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
 
 </body>
 

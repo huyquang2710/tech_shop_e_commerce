@@ -182,4 +182,13 @@ public class CategoryServiceImpl implements CategoryService {
 	public void udpateEnaledStatus(Integer id, boolean enabled) {
 		categoryRepository.updatedEnabledStatus(id, enabled);
 	}
+
+	@Override
+	public void delete(Integer id) throws CategoryNotFoundException {
+		Long countById = categoryRepository.countById(id);
+		if(countById == null || countById ==  null) {
+			throw new CategoryNotFoundException("Count not find any category with ID " + id);
+		}
+		categoryRepository.deleteById(id);
+	}
 }
