@@ -8,6 +8,8 @@ import com.techshop.common.entity.Category;
 public interface CategoryService {
 	List<Category> listAll(String sortDir);
 	
+	List<Category> listByPage(int pageNum, String sortDir);
+	
 	List<Category> listCategoriesUsedInForm();
 	
 	Category save(Category category);

@@ -1,4 +1,4 @@
-package com.techshop.admin.export;
+package com.techshop.admin.export.user;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,6 +14,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import com.techshop.admin.export.AbstractExporter;
 import com.techshop.common.entity.User;
 
 public class UserExcelExporter extends AbstractExporter{
@@ -61,7 +62,8 @@ public class UserExcelExporter extends AbstractExporter{
 	public void exportExcel(List<User> userList, HttpServletResponse response) throws IOException {
 		String extension = ".xlsx";
 		String contentType = "application/octet-stream";
-		super.setResponseHeader(response, contentType, extension);
+		String prefix = "user_";
+		super.setResponseHeader(response, contentType, extension, prefix);
 		
 		writeHeaderLine();
 		writeDateLines(userList);

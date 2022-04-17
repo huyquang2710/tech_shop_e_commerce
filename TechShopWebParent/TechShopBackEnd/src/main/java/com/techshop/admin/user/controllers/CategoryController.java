@@ -3,6 +3,8 @@ package com.techshop.admin.user.controllers;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
@@ -17,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.techshop.admin.exception.CategoryNotFoundException;
+import com.techshop.admin.export.category.CategoryCsvExporter;
 import com.techshop.admin.user.services.CategoryService;
 import com.techshop.admin.utils.FileUploadUtil;
 import com.techshop.common.entity.Category;
@@ -110,5 +113,13 @@ public class CategoryController {
 			attributes.addFlashAttribute("message", e.getMessage());
 		}
 		return "redirect:/categories";
+	}
+	
+	//export csv
+	@GetMapping("/export/csv")
+	public void exportCsv(HttpServletResponse response) throws IOException {
+		List<Category> categories = categoryService.listCategoriesUsedInForm();
+		CategoryCsvExporter categoryCsvExporter = new CategoryCsvExporter();
+		categoryCsvExporter.export(categories, response);
 	}
 }

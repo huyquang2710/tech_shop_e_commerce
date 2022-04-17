@@ -1,4 +1,4 @@
-package com.techshop.admin.export;
+package com.techshop.admin.export.user;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,13 +14,15 @@ import com.lowagie.text.Phrase;
 import com.lowagie.text.pdf.PdfPCell;
 import com.lowagie.text.pdf.PdfPTable;
 import com.lowagie.text.pdf.PdfWriter;
+import com.techshop.admin.export.AbstractExporter;
 import com.techshop.common.entity.User;
 
 public class UserPdfExporter extends AbstractExporter{
 	public void exportPdf(List<User> userList, HttpServletResponse response) throws IOException {
 		String extension = ".pdf";
 		String contentType = "application/pdf";
-		super.setResponseHeader(response, contentType, extension);
+		String prefix = "user_";
+		super.setResponseHeader(response, contentType, extension, prefix);
 		
 		Document document = new Document(PageSize.A4);
 		PdfWriter.getInstance(document, response.getOutputStream());

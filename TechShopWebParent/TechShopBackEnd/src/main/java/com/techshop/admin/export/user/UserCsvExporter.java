@@ -1,4 +1,4 @@
-package com.techshop.admin.export;
+package com.techshop.admin.export.user;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,13 +9,15 @@ import org.supercsv.io.CsvBeanWriter;
 import org.supercsv.io.ICsvBeanWriter;
 import org.supercsv.prefs.CsvPreference;
 
+import com.techshop.admin.export.AbstractExporter;
 import com.techshop.common.entity.User;
 
 public class UserCsvExporter extends AbstractExporter {
 	public void export(List<User> userList, HttpServletResponse response) throws IOException {
 		String extension = ".csv";
 		String contentType = "text/csv";
-		super.setResponseHeader(response, contentType, extension);
+		String prefix = "user_";
+		super.setResponseHeader(response, contentType, extension, prefix);
 		
 		ICsvBeanWriter csvBeanWriter = new CsvBeanWriter(response.getWriter(), CsvPreference.STANDARD_PREFERENCE);
 		
