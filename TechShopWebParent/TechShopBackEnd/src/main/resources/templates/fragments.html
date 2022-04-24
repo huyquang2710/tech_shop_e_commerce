@@ -24,7 +24,8 @@
 </div>
 
 <th th:fragment="column_link(fieldName, columnLabel)">
-	<a th:href="@{'/users/page/' + ${currentPage}
+	<a
+		th:href="@{'/users/page/' + ${currentPage}
 		+ '?sortField=' + ${fieldName} + '&sortDir=' + ${sortField != fieldName ? sortDir : reverseSortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}" class="text-white">
 		[[${columnLabel}]]
 	</a>
@@ -55,6 +56,16 @@
 
 	<a class="fas fa-trash fa-2x icon-dark link-delete"
 		th:href="@{'/categories/delete/' + ${category.id}}" th:entityId="${category.id}" title="Delete Category"></a>
+
+</div>
+
+<div th:fragment="brand_action" th:remove="tag">
+	<a href="" class="fas fa-edit fa-2x icon-green" th:href="@{'/brands/edit/' + ${brand.id}}"
+		title="Edit Brand"></a>
+		&nbsp;
+
+	<a class="fas fa-trash fa-2x icon-dark link-delete"
+		th:href="@{'/brands/delete/' + ${brand.id}}" th:entityId="${brand.id}" title="Delete Brand"></a>
 
 </div>
 </body>
