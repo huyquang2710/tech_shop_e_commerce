@@ -8,23 +8,33 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-public class MvcConfig implements WebMvcConfigurer	{
+public class MvcConfig implements WebMvcConfigurer {
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		
+
 		// user
 		String dirName = "user-photos";
 		Path userPhotoDir = Paths.get(dirName);
 		String userPhotoPath = userPhotoDir.toFile().getAbsolutePath();
-		
+
 		registry.addResourceHandler("/" + dirName + "/**").addResourceLocations("file:/" + userPhotoPath + "/");
-		
+
 		// category
-		
+
 		String categoryImageDirName = "category-images";
 		Path categoryImageDir = Paths.get(categoryImageDirName);
 		String categoryImagePath = categoryImageDir.toFile().getAbsolutePath();
-		
-		registry.addResourceHandler("/" + categoryImageDirName + "/**").addResourceLocations("file:/" + categoryImagePath + "/");
+
+		registry.addResourceHandler("/" + categoryImageDirName + "/**")
+				.addResourceLocations("file:/" + categoryImagePath + "/");
+
+		// brand
+
+		String brandLogoDirName = "../brand-logos";
+		Path brandLogoDir = Paths.get(brandLogoDirName);
+
+		String brandLogoPath = brandLogoDir.toFile().getAbsolutePath();
+
+		registry.addResourceHandler("/brand-logos/**").addResourceLocations("file:/" + brandLogoPath + "/");
 	}
 }
