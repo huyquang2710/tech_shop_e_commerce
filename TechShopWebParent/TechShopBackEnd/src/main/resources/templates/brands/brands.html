@@ -1,0 +1,98 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments :: page_head('BRANDS - TECHSHOP')" ></head>
+
+<body>
+
+	<div class="container-fluid">
+		<!-- menu -->
+	<div th:replace="navigation :: menu"></div>
+
+		<div>
+			<h2>Manage Brands</h2>
+			<!-- create new -->
+			<a th:href="@{/brands/new}">Create New Brands</a>
+			&nbsp;|&nbsp;
+			<!-- csv --> 
+			<a th:href="@{/brands/export/csv}">Export CSV</a>
+			&nbsp;|&nbsp;
+			<!-- excel --> 
+			<a th:href="@{/brands/export/excel}">Export Excel</a>
+			&nbsp;|&nbsp;
+			<!-- pdf --> 
+			<a th:href="@{/brands/export/pdf}">Export Pdf</a>
+		</div>
+		
+		<!-- message -->
+		<div th:if="${message != null}" class="alert alert-success text-center">
+			[[${message}]]
+		</div>
+
+		<!-- search -->
+		<div class="">
+			<form th:action="@{/brands/page/1}" class="form-inline m-3">
+				<input type="hidden" name="sortField" th:value="${sortField}" />
+				<input type="hidden" name="sortDir" th:value="${sortDir}" />
+				Filter:&nbsp;
+				<input type="search" name="keyword" th:value="${keyword}" class="form-control" required />
+				&nbsp;&nbsp;
+				<input type="submit" value="Search" class="btn btn-primary" />
+				&nbsp;&nbsp;
+				<input type="button" value="Clear" class="btn btn-danger" onClick="clearFilter()" />
+			</form>
+		</div>
+
+		<div>
+			<table class="table table-bordered table-striped table-hover table-responsive-xl">
+				<thead class="thead-dark">
+					<tr>
+						<th>ID</th>
+						<th>Brands Logo</th>
+						<th>
+							<a class="text-while" >Brand Name</a>
+						</th>
+						<th>Categories</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="brand : ${brand}">
+						<td>[[${brand.id}]]</td>
+						<td>
+							LOGO
+							<!-- <img th:if="${brand.image != null}" th:src="@{${category.photosImagePath}}" style="width: 100px"> -->
+						</td>
+						<td>[[${brand.name}]]</td>
+						<td>
+							<th:block th:each="category : ${brand.categories}">
+								<span class="badge badge-secondary" th:text="${category.name}"></span>
+							</th:block>
+						</td>
+				<!-- 		<td>
+							<div th:replace="fragments :: category_action" ></div>
+						</td> -->
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	
+	<div th:replace="modal_fragments :: confirm_modal" ></div>
+
+	<div th:replace="fragments :: footer"></div>
+	
+	</div>
+	<script th:src="@{/js/common_list.js}"></script>
+	<script>
+	moduleURL = "[[@{/categories}]]";
+	
+	$(document).ready(function (){
+		$(".link-delete").on("click", function(e) {
+			e.preventDefault();
+			showDeleteConfirmModal($(this), 'category');
+		});
+	});
+	</script>
+</body>
+
+</html>

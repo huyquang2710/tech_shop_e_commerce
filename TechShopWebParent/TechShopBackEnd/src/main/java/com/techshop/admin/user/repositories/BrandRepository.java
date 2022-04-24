@@ -7,5 +7,5 @@ import com.techshop.common.entity.Brand;
 
 @Repository
 public interface BrandRepository extends PagingAndSortingRepository<Brand, Integer>{
-
+	
 }
