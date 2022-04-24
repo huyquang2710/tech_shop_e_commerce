@@ -1,0 +1,92 @@
+2022-04-23 03:06:48.293  INFO 2152 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 2152 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-04-23 03:06:48.300 DEBUG 2152 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-04-23 03:06:48.305  INFO 2152 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-04-23 03:06:52.418  WARN 2152 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-04-23 03:06:54.127  INFO 2152 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 6.382 seconds (JVM running for 8.032)
+2022-04-23 03:27:12.667  INFO 2152 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 2152 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-04-23 03:27:12.667 DEBUG 2152 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-04-23 03:27:12.667  INFO 2152 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-04-23 03:27:13.331  WARN 2152 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-04-23 03:27:13.956  INFO 2152 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.326 seconds (JVM running for 1227.861)
+2022-04-23 03:27:53.845  INFO 2152 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Starting TechShopBackEndApplication using Java 16.0.2 on Admin with PID 2152 (E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd\target\classes started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-04-23 03:27:53.845 DEBUG 2152 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-04-23 03:27:53.846  INFO 2152 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : No active profile set, falling back to default profiles: default
+2022-04-23 03:27:54.385  WARN 2152 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-04-23 03:27:54.984  INFO 2152 --- [restartedMain] c.t.admin.TechShopBackEndApplication     : Started TechShopBackEndApplication in 1.166 seconds (JVM running for 1268.889)
+2022-04-23 12:52:29.183  INFO 14156 --- [main] c.t.admin.brand.BrandRepositoryTest      : Starting BrandRepositoryTest using Java 16.0.2 on Admin with PID 14156 (started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-04-23 12:52:29.202 DEBUG 14156 --- [main] c.t.admin.brand.BrandRepositoryTest      : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-04-23 12:52:29.202  INFO 14156 --- [main] c.t.admin.brand.BrandRepositoryTest      : No active profile set, falling back to default profiles: default
+2022-04-23 12:52:34.987  INFO 14156 --- [main] c.t.admin.brand.BrandRepositoryTest      : Started BrandRepositoryTest in 6.577 seconds (JVM running for 9.072)
+2022-04-23 12:52:35.544  WARN 14156 --- [main] o.s.test.context.TestContextManager      : Caught exception while invoking 'afterTestMethod' callback on TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener@46944ca9] for test method [public void com.techshop.admin.brand.BrandRepositoryTest.testCreateBrand()] and test instance [com.techshop.admin.brand.BrandRepositoryTest@5cde6747]
+
+org.springframework.transaction.UnexpectedRollbackException: Transaction silently rolled back because it has been marked as rollback-only
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:752) ~[spring-tx-5.3.15.jar:5.3.15]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711) ~[spring-tx-5.3.15.jar:5.3.15]
+	at org.springframework.test.context.transaction.TransactionContext.endTransaction(TransactionContext.java:131) ~[spring-test-5.3.15.jar:5.3.15]
+	at org.springframework.test.context.transaction.TransactionalTestExecutionListener.afterTestMethod(TransactionalTestExecutionListener.java:255) ~[spring-test-5.3.15.jar:5.3.15]
+	at org.springframework.test.context.TestContextManager.afterTestMethod(TestContextManager.java:445) ~[spring-test-5.3.15.jar:5.3.15]
+	at org.springframework.test.context.junit.jupiter.SpringExtension.afterEach(SpringExtension.java:206) ~[spring-test-5.3.15.jar:5.3.15]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeAfterEachCallbacks$12(TestMethodTestDescriptor.java:257) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeAllAfterMethodsOrCallbacks$13(TestMethodTestDescriptor.java:273) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeAllAfterMethodsOrCallbacks$14(TestMethodTestDescriptor.java:273) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeAllAfterMethodsOrCallbacks(TestMethodTestDescriptor.java:272) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeAfterEachCallbacks(TestMethodTestDescriptor.java:256) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:141) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:95) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:91) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:60) ~[junit-platform-launcher-1.8.2.jar:1.8.2]
+	at org.eclipse.jdt.internal.junit5.runner.JUnit5TestReference.run(JUnit5TestReference.java:98) ~[.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:40) ~[.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:529) ~[.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:756) ~[.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:452) ~[.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:210) ~[.cp/:na]
+
+2022-04-23 12:53:37.647  INFO 8484 --- [main] c.t.admin.brand.BrandRepositoryTest      : Starting BrandRepositoryTest using Java 16.0.2 on Admin with PID 8484 (started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-04-23 12:53:37.648 DEBUG 8484 --- [main] c.t.admin.brand.BrandRepositoryTest      : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-04-23 12:53:37.648  INFO 8484 --- [main] c.t.admin.brand.BrandRepositoryTest      : No active profile set, falling back to default profiles: default
+2022-04-23 12:53:42.760  INFO 8484 --- [main] c.t.admin.brand.BrandRepositoryTest      : Started BrandRepositoryTest in 5.745 seconds (JVM running for 7.511)
+2022-04-23 15:21:45.783  INFO 1496 --- [main] c.t.admin.brand.BrandRepositoryTest      : Starting BrandRepositoryTest using Java 16.0.2 on Admin with PID 1496 (started by Admin in E:\STSProject\TechShop\TechShopWebParent\TechShopBackEnd)
+2022-04-23 15:21:45.882 DEBUG 1496 --- [main] c.t.admin.brand.BrandRepositoryTest      : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-04-23 15:21:45.883  INFO 1496 --- [main] c.t.admin.brand.BrandRepositoryTest      : No active profile set, falling back to default profiles: default
+2022-04-23 15:21:52.893  INFO 1496 --- [main] c.t.admin.brand.BrandRepositoryTest      : Started BrandRepositoryTest in 8.05 seconds (JVM running for 10.465)

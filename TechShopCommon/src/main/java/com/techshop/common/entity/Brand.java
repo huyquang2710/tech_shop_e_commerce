@@ -23,12 +23,26 @@ public class Brand {
 	@Column(nullable = false, length = 45, unique = true)
 	private String name;
 	
-	@Column(nullable = false, length = 128)
+	@Column(length = 128)
 	private String logo;
 	
 	@ManyToMany
 	@JoinTable(name = "brands_categories", joinColumns = @JoinColumn(name = "category_id"))
 	private Set<Category> categories = new HashSet<>();
+
+	public Brand() {
+	}
+
+	public Brand(Integer id, String name, String logo, Set<Category> categories) {
+		this.id = id;
+		this.name = name;
+		this.logo = logo;
+		this.categories = categories;
+	}
+
+	public Brand(String name) {
+		this.name = name;
+	}
 
 	public Integer getId() {
 		return id;
@@ -61,7 +75,9 @@ public class Brand {
 	public void setCategories(Set<Category> categories) {
 		this.categories = categories;
 	}
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "Brand [id=" + id + ", name=" + name + ", logo=" + logo + ", categories=" + categories + "]";
+	}
 }
