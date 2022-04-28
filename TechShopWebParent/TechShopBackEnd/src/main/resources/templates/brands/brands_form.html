@@ -77,35 +77,32 @@
 
 	<div th:replace="fragments :: footer"></div>
 	</div>
-	<!-- <script type="text/javascript">
+	 <script type="text/javascript">
 		moduleURL = "[[@{/categories}]]";
 		
 		function checkUnique(form) {
-			catId = $("#id").val();
-			catName = $("#name").val();
-			catAlias = $("#alias").val();
+			brandId = $("#id").val();
+			brandName = $("#name").val();
 
 			csrfValue = $("input[name='_csrf']").val();
-			url = "[[@{/categories/check_unique}]]";
+			url = "[[@{/brands/check_unique}]]";
 
-			params = {id: catId, name: catName, alias: catAlias, _csrf: csrfValue};
+			params = {id: brandId, name: brandName, _csrf: csrfValue};
 			$.post(url, params, function(response) {
 				if(response == "OK") {
 					form.submit();
-				} else if(response == "Duplicate Name") {
-					showWarningModal("There is another category having same name " + catName);
-				} else if(response == "Duplicate Alias") {
-					showWarningModal("There is another category having same alias " + catAlias);
+				} else if(response == "Duplicate") {
+					showWarningModal("There is another brand having same name " + brandName);
 				} else {
 					showErrorModal("Unknown response from server");
 				}
 			}).fail(function() {
-				alert('Could not connect to the server');
+				showErrorModal("Count not connect to the server");
 			});
 
 			return false;
 		}
-	</script> -->
+	</script> 
 	<script>
 		moduleUrl = "[[@{/brands}]]"
 		$(document).ready(function() {

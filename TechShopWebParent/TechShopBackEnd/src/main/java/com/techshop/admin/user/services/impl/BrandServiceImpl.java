@@ -4,6 +4,10 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.techshop.admin.exception.BrandNotFoundException;
@@ -45,6 +49,36 @@ public class BrandServiceImpl implements BrandService{
 			throw new BrandNotFoundException("Count not found any brand");
 		}
 		brandRepository.deleteById(id);
+	}
+
+	@Override
+	public String checkUnique(Integer id, String name) {
+		boolean isCreatingNew = (id == null || id == 0);
+		Brand brandByName = brandRepository.findByName(name);
+		
+		if(isCreatingNew) {
+			if(brandByName != null) return "Duplicate";
+		} else {
+			if(brandByName != null && brandByName.getId() != null) {
+				return "Duplicate";
+			}
+		}
+		return "OK";
+	}
+	public static final int BRAND_PER_PAGE = 10;
+
+	@Override
+	public Page<Brand> lítByPage(int pageNum, String sortField, String sortDir, String keyword) {
+		Sort sort = Sort.by(sortField);
+		
+		sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
+		
+		Pageable pageable = PageRequest.of(pageNum - 1, BRAND_PER_PAGE, sort);
+		
+		if(keyword != null) {
+			return brandRepository.findAll(keyword, pageable);
+		}
+		return brandRepository.findAll(pageable);
 	}
 	
 }

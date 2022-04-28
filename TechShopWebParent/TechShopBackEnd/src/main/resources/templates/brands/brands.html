@@ -70,7 +70,7 @@
 						</td>
 				 		<td>
 							<div th:replace="fragments :: brand_action" ></div>
-						</td> 
+						</td>
 					</tr>
 				</tbody>
 			</table>
@@ -83,12 +83,12 @@
 	</div>
 	<script th:src="@{/js/common_list.js}"></script>
 	<script>
-	moduleURL = "[[@{/categories}]]";
+	moduleURL = "[[@{/brand}]]";
 	
 	$(document).ready(function (){
 		$(".link-delete").on("click", function(e) {
 			e.preventDefault();
-			showDeleteConfirmModal($(this), 'category');
+			showDeleteConfirmModal($(this), 'brand');
 		});
 	});
 	</script>

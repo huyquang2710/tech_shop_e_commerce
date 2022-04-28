@@ -21,4 +21,5 @@ public interface CategoryService {
 	void udpateEnaledStatus(Integer id, boolean enabled);
 	
 	void delete(Integer id) throws CategoryNotFoundException;
+
 }

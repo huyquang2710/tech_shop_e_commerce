@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -18,6 +20,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.techshop.admin.exception.BrandNotFoundException;
 import com.techshop.admin.user.services.BrandService;
 import com.techshop.admin.user.services.CategoryService;
+import com.techshop.admin.user.services.impl.BrandServiceImpl;
 import com.techshop.admin.utils.FileUploadUtil;
 import com.techshop.common.entity.Brand;
 import com.techshop.common.entity.Category;
@@ -37,6 +40,35 @@ public class BrandController {
 		List<Brand> brandList = brandService.findAll();
 		
 		model.addAttribute("brand", brandList);
+		return "brands/brands";
+	}
+//	@GetMapping
+//	public String findAll(Model model) {
+//		
+//		return getByPage(1, "name", "asc", null, model);
+//	}
+	
+	public String getByPage(@PathVariable("pageNum") int pageNum, @Param("sortField") String sortField, @Param("sortDir") String sortDir, @Param("keyword") String keyword, Model model) {
+		Page<Brand> page = brandService.lítByPage(pageNum, sortField, sortDir, keyword);
+		List<Brand> list = page.getContent();
+		
+		long startCount = (pageNum - 1) * BrandServiceImpl.BRAND_PER_PAGE + 1;
+		long endCount = startCount + BrandServiceImpl.BRAND_PER_PAGE - 1;
+		if(endCount > page.getTotalElements()) {
+			endCount = page.getTotalElements();
+		}
+		String reverseSortDir = sortDir.equals("asc") ? "desc" : "asc";
+		
+		model.addAttribute("currentPage", pageNum);
+		model.addAttribute("startCount", startCount);
+		model.addAttribute("endCount", endCount);
+		model.addAttribute("totalItems", page.getTotalElements());
+		model.addAttribute("totalPages", page.getTotalPages());
+		model.addAttribute("brand", list);
+		model.addAttribute("sortField", sortField);
+		model.addAttribute("sortDir", sortDir);
+		model.addAttribute("reverseSortDir", reverseSortDir);
+		model.addAttribute("keyword", keyword);
 		return "brands/brands";
 	}
 	
