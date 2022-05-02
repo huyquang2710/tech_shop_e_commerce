@@ -7,51 +7,54 @@
 
 	<div class="container-fluid">
 		<!-- menu -->
-	<div th:replace="navigation :: menu"></div>
+		<div th:replace="navigation :: menu"></div>
 
 		<div>
 			<h2>Manage Brands</h2>
 			<!-- create new -->
-			<a th:href="@{/brands/new}">Create New Brands</a>
-			&nbsp;|&nbsp;
-			<!-- csv --> 
-			<a th:href="@{/brands/export/csv}">Export CSV</a>
-			&nbsp;|&nbsp;
-			<!-- excel --> 
-			<a th:href="@{/brands/export/excel}">Export Excel</a>
-			&nbsp;|&nbsp;
-			<!-- pdf --> 
+			<a th:href="@{/brands/new}">Create New Brands</a> &nbsp;|&nbsp;
+			<!-- csv -->
+			<a th:href="@{/brands/export/csv}">Export CSV</a> &nbsp;|&nbsp;
+			<!-- excel -->
+			<a th:href="@{/brands/export/excel}">Export Excel</a> &nbsp;|&nbsp;
+			<!-- pdf -->
 			<a th:href="@{/brands/export/pdf}">Export Pdf</a>
 		</div>
-		
+
 		<!-- message -->
-		<div th:if="${message != null}" class="alert alert-success text-center">
-			[[${message}]]
-		</div>
+		<div th:if="${message != null}"
+			class="alert alert-success text-center">[[${message}]]</div>
 
 		<!-- search -->
 		<div class="">
 			<form th:action="@{/brands/page/1}" class="form-inline m-3">
-				<input type="hidden" name="sortField" th:value="${sortField}" />
-				<input type="hidden" name="sortDir" th:value="${sortDir}" />
-				Filter:&nbsp;
-				<input type="search" name="keyword" th:value="${keyword}" class="form-control" required />
-				&nbsp;&nbsp;
-				<input type="submit" value="Search" class="btn btn-primary" />
-				&nbsp;&nbsp;
-				<input type="button" value="Clear" class="btn btn-danger" onClick="clearFilter()" />
+				<input type="hidden" name="sortField" th:value="${sortField}" /> <input
+					type="hidden" name="sortDir" th:value="${sortDir}" />
+				Filter:&nbsp; <input type="search" name="keyword"
+					th:value="${keyword}" class="form-control" required />
+				&nbsp;&nbsp; <input type="submit" value="Search"
+					class="btn btn-primary" /> &nbsp;&nbsp; <input type="button"
+					value="Clear" class="btn btn-danger" onClick="clearFilter()" />
 			</form>
 		</div>
 
 		<div>
-			<table class="table table-bordered table-striped table-hover table-responsive-xl">
+			<table
+				class="table table-bordered table-striped table-hover table-responsive-xl">
 				<thead class="thead-dark">
 					<tr>
-						<th>ID</th>
-						<th>Brands Logo</th>
 						<th>
-							<a class="text-while" >Brand Name</a>
+							<a th:if="${sortField != 'id'}" th:href="@{'/brands/page/' + ${currentPage}
+								+ '?sortField=id&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}" class="text-white">ID
+							</a>
+							<a th:if="${sortField == 'id'}" th:href="@{'/brands/page/' + ${currentPage} 
+								+ '?sortField=id&sortDir=' + ${reverseSortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}" class="text-white">ID
+							</a>
+							<span th:if="${sortField == 'id'}" 
+								  th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down' }"></span>
 						</th>
+						<th>Brands Logo</th>
+						<th><a class="text-while">Brand Name</a></th>
 						<th>Categories</th>
 						<th></th>
 					</tr>
@@ -59,23 +62,54 @@
 				<tbody>
 					<tr th:each="brand : ${brand}">
 						<td>[[${brand.id}]]</td>
-						<td>
-							 <img th:if="${brand.logo != null}" th:src="@{${brand.logoPath}}" style="width: 100px"> 
-						</td>
+						<td><img th:if="${brand.logo != null}"
+							th:src="@{${brand.logoPath}}" style="width: 100px"></td>
 						<td>[[${brand.name}]]</td>
-						<td>
-							<th:block th:each="category : ${brand.categories}">
+						<td><th:block th:each="category : ${brand.categories}">
 								<span class="badge badge-secondary" th:text="${category.name}"></span>
-							</th:block>
-						</td>
-				 		<td>
-							<div th:replace="fragments :: brand_action" ></div>
+							</th:block></td>
+						<td>
+							<div th:replace="fragments :: brand_action"></div>
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
-	
+
+		<!-- show brand -->
+		<div class="text-center m-1" th:if="${totalItems > 0}">
+			<span>Showing Brand # [[${startCount}]] to [[${endCount}]] of
+				[[${totalItems}]] </span>
+		</div>
+		<div class="text-center m-1" th:unless="${totalItems > 0}">
+			<span>No Brand found</span>
+		</div>
+
+		
+		<!-- pageable -->
+		<div th:if="${totalPages > 1}">
+			<nav aria-label="Page navigation example">
+				<ul class="pagination justify-content-center">
+					<li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'} "><a class="page-link" 
+						th:href="@{'/brands/page/1?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">First</a></li>
+					
+					<li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'} "><a class="page-link" 
+						th:href="@{'/brands/page/' + ${currentPage - 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Previous</a></li>
+					
+					<li th:class="${currentPage != i ? 'page-item' : 'page-item active'}" 
+						th:each="i : ${#numbers.sequence(1, totalPages)}">
+						
+						<a class="page-link" th:href="@{'/brands/page/' + ${i} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">[[${i}]]</a>
+						
+					</li>
+					<li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'} "><a class="page-link" 
+						th:href="@{'/brands/page/' + ${currentPage + 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Next</a></li>
+					<li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'} "><a class="page-link" 
+						th:href="@{'/brands/page/' + ${totalPages} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Last</a></li>
+				</ul>
+			</nav>
+		</div>
+
 	<div th:replace="modal_fragments :: confirm_modal" ></div>
 
 	<div th:replace="fragments :: footer"></div>
