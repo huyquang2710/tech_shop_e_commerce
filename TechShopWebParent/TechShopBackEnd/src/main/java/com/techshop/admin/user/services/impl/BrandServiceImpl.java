@@ -17,6 +17,7 @@ import com.techshop.common.entity.Brand;
 
 @Service
 public class BrandServiceImpl implements BrandService{
+	public static final int BRAND_PER_PAGE = 5;
 	
 	@Autowired
 	private BrandRepository brandRepository;
@@ -65,7 +66,7 @@ public class BrandServiceImpl implements BrandService{
 		}
 		return "OK";
 	}
-	public static final int BRAND_PER_PAGE = 10;
+
 
 	@Override
 	public Page<Brand> lítByPage(int pageNum, String sortField, String sortDir, String keyword) {

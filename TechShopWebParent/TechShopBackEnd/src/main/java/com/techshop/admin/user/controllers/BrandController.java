@@ -35,19 +35,20 @@ public class BrandController {
 	@Autowired
 	private CategoryService categoryService;
 	
-	@GetMapping
-	public String findAll(Model model) {
-		List<Brand> brandList = brandService.findAll();
-		
-		model.addAttribute("brand", brandList);
-		return "brands/brands";
-	}
 //	@GetMapping
 //	public String findAll(Model model) {
+//		List<Brand> brandList = brandService.findAll();
 //		
-//		return getByPage(1, "name", "asc", null, model);
+//		model.addAttribute("brand", brandList);
+//		return "brands/brands";
 //	}
+	@GetMapping
+	public String findAll(Model model) {
+		
+		return getByPage(1, "name", "asc", null, model);
+	}
 	
+	@GetMapping("/page/{pageNum}")
 	public String getByPage(@PathVariable("pageNum") int pageNum, @Param("sortField") String sortField, @Param("sortDir") String sortDir, @Param("keyword") String keyword, Model model) {
 		Page<Brand> page = brandService.lítByPage(pageNum, sortField, sortDir, keyword);
 		List<Brand> list = page.getContent();
