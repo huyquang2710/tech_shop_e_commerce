@@ -34,6 +34,13 @@ public class Brand {
 	public Brand() {
 	}
 
+	
+	public Brand(Integer id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+
+
 	public Brand(Integer id, String name, String logo, Set<Category> categories) {
 		this.id = id;
 		this.name = name;

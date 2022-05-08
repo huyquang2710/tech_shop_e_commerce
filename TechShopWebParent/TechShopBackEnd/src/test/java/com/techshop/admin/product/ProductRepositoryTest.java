@@ -52,4 +52,5 @@ public class ProductRepositoryTest {
 		assertThat(saveProduct).isNotNull();
 		assertThat(saveProduct.getId()).isGreaterThan(0);
 	}
+
 }
