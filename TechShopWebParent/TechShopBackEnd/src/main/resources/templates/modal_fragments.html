@@ -3,18 +3,19 @@
 
 <body>
 
-<!-- modal -->
+	<!-- modal -->
 	<div th:fragment="modal_dialog" class="modal fade text-center" id="confirmModal">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="model-header">
 					<h4 class="model-title" id="modelTitle">Warning</h4>
+					<button class="close" type="button" data-dimiss="modal">&times;</button>
 				</div>
 				<div class="modal-body">
 					<span id="modalBody"></span>
 				</div>
 				<div class="modal-footer">
-					<button class="btn btn-danger" type="button" data-dismiss="modal">Close</button>
+					<button class="btn btn-danger" type="button" data-dimiss="modal">Close</button>
 				</div>
 			</div>
 		</div>

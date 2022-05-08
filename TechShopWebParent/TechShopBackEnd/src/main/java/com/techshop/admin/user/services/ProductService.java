@@ -10,4 +10,6 @@ public interface ProductService {
 	Product save(Product product);
 	
 	String checkUnique(Integer id, String name);
+	
+	void updateProductEnabledStatus(Integer id, boolean enabled);
 }

@@ -3,6 +3,8 @@ package com.techshop.admin.user.services.impl;
 import java.util.Date;
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,7 @@ import com.techshop.admin.user.services.ProductService;
 import com.techshop.common.entity.Product;
 
 @Service
+@Transactional
 public class ProductServiceImpl implements ProductService{
 	
 	@Autowired
@@ -49,6 +52,11 @@ public class ProductServiceImpl implements ProductService{
 			}
 		}
 		return "OK";
+	}
+
+	@Override
+	public void updateProductEnabledStatus(Integer id, boolean enabled) {
+		productRepository.updateEnabledStatus(id, enabled);
 	}
 
 }
