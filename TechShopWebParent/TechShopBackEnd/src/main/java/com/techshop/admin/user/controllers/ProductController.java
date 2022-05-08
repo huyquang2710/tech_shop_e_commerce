@@ -10,10 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.techshop.admin.user.services.BrandService;
-import com.techshop.admin.user.services.CategoryService;
 import com.techshop.admin.user.services.ProductService;
 import com.techshop.common.entity.Brand;
-import com.techshop.common.entity.Category;
 import com.techshop.common.entity.Product;
 
 @Controller
@@ -24,9 +22,6 @@ public class ProductController {
 	
 	@Autowired
 	private BrandService brandService;
-	
-	@Autowired
-	private CategoryService categoryService;
 	
 	@GetMapping
 	public String products(Model model) {
@@ -39,7 +34,6 @@ public class ProductController {
 	@GetMapping("/new")
 	public String productForm(Model model) {
 		List<Brand> brandList = brandService.findAll();
-		List<Category> categories = categoryService.listAll(null);
 		Product product = new Product();
 		product.setEnabled(true);
 		product.setInStock(true);

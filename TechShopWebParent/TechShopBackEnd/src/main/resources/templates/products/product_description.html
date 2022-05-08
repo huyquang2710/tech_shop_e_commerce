@@ -1,0 +1,17 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+	<!-- modal -->
+	<div th:fragment="content" th:remove="tag">
+		<div class="">
+			<label for="">Short Description</label>
+			<textarea class="form-control" th:field="*{shortDescription}" rows="5"></textarea>
+			
+			<label class=" p-3" for="">Full Description</label>
+			<textarea class="form-control" th:field="*{fullDescription}" rows="10"></textarea>
+		</div>
+	</div>
+</body>
+
+</html>
