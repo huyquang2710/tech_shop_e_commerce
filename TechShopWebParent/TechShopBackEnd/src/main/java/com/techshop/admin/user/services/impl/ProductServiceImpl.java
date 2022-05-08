@@ -37,4 +37,18 @@ public class ProductServiceImpl implements ProductService{
 		return productRepository.save(product);
 	}
 
+	@Override
+	public String checkUnique(Integer id, String name) {
+		boolean isCreatignNew = (id == null || id == 0);
+		Product productByName = productRepository.findByName(name);
+		if(isCreatignNew) {
+			if(productByName != null) return "Duplicate";
+		} else {
+			if(productByName != null && productByName.getId() != id) {
+				return "Duplicate";
+			}
+		}
+		return "OK";
+	}
+
 }

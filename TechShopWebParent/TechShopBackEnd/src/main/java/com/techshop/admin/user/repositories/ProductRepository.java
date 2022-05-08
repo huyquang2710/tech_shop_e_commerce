@@ -7,5 +7,5 @@ import com.techshop.common.entity.Product;
 
 @Repository
 public interface ProductRepository extends PagingAndSortingRepository<Product, Integer>{
-
+	Product findByName(String name);
 }

@@ -8,4 +8,6 @@ public interface ProductService {
 	List<Product> findAll();
 	
 	Product save(Product product);
+	
+	String checkUnique(Integer id, String name);
 }
