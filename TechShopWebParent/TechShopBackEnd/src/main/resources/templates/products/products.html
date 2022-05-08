@@ -1,0 +1,147 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments :: page_head('PRODUCTS - TECHSHOP')" ></head>
+
+<body>
+
+	<div class="container-fluid">
+		<!-- menu -->
+		<div th:replace="navigation :: menu"></div>
+
+		<div>
+			<h2>Manage Brands</h2>
+			<!-- create new -->
+			<a th:href="@{/products/new}">Create New Product</a> &nbsp;|&nbsp;
+			<!-- csv -->
+			<a th:href="@{/products/export/csv}">Export CSV</a> &nbsp;|&nbsp;
+			<!-- excel -->
+			<a th:href="@{/products/export/excel}">Export Excel</a> &nbsp;|&nbsp;
+			<!-- pdf -->
+			<a th:href="@{/products/export/pdf}">Export Pdf</a>
+		</div>
+
+		<!-- message -->
+		<div th:if="${message != null}"
+			class="alert alert-success text-center">[[${message}]]</div>
+
+<!-- 		<!-- search -->
+		<div class="">
+			<form th:action="@{/products/page/1}" class="form-inline m-3">
+				<input type="hidden" name="sortField" th:value="${sortField}" /> <input
+					type="hidden" name="sortDir" th:value="${sortDir}" />
+				Filter:&nbsp; <input type="search" name="keyword"
+					th:value="${keyword}" class="form-control" required />
+				&nbsp;&nbsp; <input type="submit" value="Search"
+					class="btn btn-primary" /> &nbsp;&nbsp; <input type="button"
+					value="Clear" class="btn btn-danger" onClick="clearFilter()" />
+			</form>
+		</div>
+ -->
+		<div>
+			<table
+				class="table table-bordered table-striped table-hover table-responsive-xl">
+				<thead class="thead-dark">
+					<tr>
+						<!-- <th>
+							<a th:if="${sortField != 'id'}" th:href="@{'/brands/page/' + ${currentPage}
+								+ '?sortField=id&sortDir=' + ${sortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}" class="text-white">ID
+							</a>
+							<a th:if="${sortField == 'id'}" th:href="@{'/brands/page/' + ${currentPage} 
+								+ '?sortField=id&sortDir=' + ${reverseSortDir} + ${keyword != null ? '&keyword=' + keyword : ''}}" class="text-white">ID
+							</a>
+							<span th:if="${sortField == 'id'}" 
+								  th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down' }"></span>
+						</th> -->
+						<th>ID</th>
+						<th>Product Name</th>
+						<th><a class="text-while">Brand Name</a></th>
+						<th>Category</th>
+						<th>Enabled</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="product : ${product}">
+						<td>[[${product.id}]]</td>
+						<!-- <td><img th:if="${brand.logo != null}"
+							th:src="@{${brand.logoPath}}" style="width: 100px"></td> -->
+						<td>[[${product.name}]]</td>
+						<!-- <td><th:block th:each="category : ${brand.categories}">
+								<span class="badge badge-secondary" th:text="${category.name}"></span>
+							</th:block></td>-->
+						<td>[[${product.brand.name}]]</td>
+						<td>[[${product.category.name}]]</td>
+						<td>
+							<a title="Disable this product" th:if="${product.enabled == true}"
+								th:href="@{'/products/' + ${product.id} + '/enabled/false'}"
+								class="fas fa-check-circle fa-2x icon-green"></a>
+							<a title="Enable this product" th:if="${product.enabled == false}"
+								th:href="@{'/products/' + ${product.id} + '/enabled/true'}"
+								class="fas fa-circle fa-2x icon-dark"></a>
+						</td>
+						<td>
+							<a href="" class="fas fa-edit fa-2x icon-green" th:href="@{'/products/edit/' + ${product.id}}"
+								title="Edit user"></a>
+							&nbsp;
+							<a th:userId="${product.id}" class="fas fa-trash fa-2x icon-dark link-delete"
+								th:href="@{'/products/delete/' + ${product.id}}	" title="Delete"></a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<!-- <!-- show product -->
+		<div class="text-center m-1" th:if="${totalItems > 0}">
+			<span>Showing Product # [[${startCount}]] to [[${endCount}]] of
+				[[${totalItems}]] </span>
+		</div>
+		<div class="text-center m-1" th:unless="${totalItems > 0}">
+			<span>No Product found</span>
+		</div> -->
+
+		
+		<!-- <!-- pageable -->
+		<div th:if="${totalPages > 1}">
+			<nav aria-label="Page navigation example">
+				<ul class="pagination justify-content-center">
+					<li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'} "><a class="page-link" 
+						th:href="@{'/brands/page/1?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">First</a></li>
+					
+					<li th:class="${currentPage > 1 ? 'page-item' : 'page-item disabled'} "><a class="page-link" 
+						th:href="@{'/brands/page/' + ${currentPage - 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Previous</a></li>
+					
+					<li th:class="${currentPage != i ? 'page-item' : 'page-item active'}" 
+						th:each="i : ${#numbers.sequence(1, totalPages)}">
+						
+						<a class="page-link" th:href="@{'/brands/page/' + ${i} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">[[${i}]]</a>
+						
+					</li>
+					<li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'} "><a class="page-link" 
+						th:href="@{'/brands/page/' + ${currentPage + 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Next</a></li>
+					<li th:class="${currentPage < totalPages ? 'page-item' : 'page-item disabled'} "><a class="page-link" 
+						th:href="@{'/brands/page/' + ${totalPages} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Last</a></li>
+				</ul>
+			</nav>
+		</div> -->
+
+	<div th:replace="modal_fragments :: confirm_modal" ></div>
+
+	<div th:replace="fragments :: footer"></div>
+	
+	</div>
+	<script th:src="@{/js/common_list.js}"></script>
+	<script>
+	moduleURL = "[[@{/brand}]]";
+	
+	$(document).ready(function (){
+		$(".link-delete").on("click", function(e) {
+			e.preventDefault();
+			showDeleteConfirmModal($(this), 'brand');
+		});
+	});
+	</script>
+</body>
+
+</html>

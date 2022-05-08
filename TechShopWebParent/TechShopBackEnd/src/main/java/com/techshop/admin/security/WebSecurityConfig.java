@@ -61,7 +61,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 			.usernameParameter("email")
 			.passwordParameter("password")
 			.permitAll()
-			.and().logout().permitAll();
+			.and().logout().disable();
 	}
 	
 //	@Override
