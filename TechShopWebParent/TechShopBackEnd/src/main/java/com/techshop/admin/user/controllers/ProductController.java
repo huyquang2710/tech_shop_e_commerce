@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.techshop.admin.exception.ProductNotFoundException2;
 import com.techshop.admin.user.services.BrandService;
 import com.techshop.admin.user.services.ProductService;
 import com.techshop.common.entity.Brand;
@@ -63,6 +64,16 @@ public class ProductController {
 		String status = enabled ? "enabled" : "disabled";
 		String message = "The Product ID " + id + "has been "  + status;
 		attributes.addFlashAttribute("message", message);
+		return "redirect:/products";
+	}
+	@GetMapping("/delete/{id}")
+	public String deleteProduct(@PathVariable("id") Integer id, Model model, RedirectAttributes attributes) {
+		try {
+			productService.delete(id);
+			attributes.addFlashAttribute("message", "The product has been xoa");
+		} catch (ProductNotFoundException2 e) {
+			attributes.addFlashAttribute("message", e.getMessage());
+		}
 		return "redirect:/products";
 	}
 }

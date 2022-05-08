@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.techshop.admin.exception.ProductNotFoundException2;
 import com.techshop.admin.user.repositories.ProductRepository;
 import com.techshop.admin.user.services.ProductService;
 import com.techshop.common.entity.Product;
@@ -57,6 +58,16 @@ public class ProductServiceImpl implements ProductService{
 	@Override
 	public void updateProductEnabledStatus(Integer id, boolean enabled) {
 		productRepository.updateEnabledStatus(id, enabled);
+	}
+
+	@Override
+	public void delete(Integer id) throws ProductNotFoundException2{
+		Long countById = productRepository.countById(id);
+		
+		if(countById == null || countById == 0) {
+			throw new ProductNotFoundException2("Count not find any product with ID " + id);
+		}
+		productRepository.deleteById(id);
 	}
 
 }
