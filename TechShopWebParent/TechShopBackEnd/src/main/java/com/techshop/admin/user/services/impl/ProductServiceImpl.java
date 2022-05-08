@@ -1,5 +1,6 @@
 package com.techshop.admin.user.services.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,21 @@ public class ProductServiceImpl implements ProductService{
 	public List<Product> findAll() {
 		
 		return (List<Product>) productRepository.findAll();
+	}
+
+	@Override
+	public Product save(Product product) {
+		if(product.getId() == null) {
+			product.setCreatedTime(new Date());
+		}
+		if(product.getAlias() == null || product.getAlias().isEmpty()) {
+			String defaultAlias = product.getName().replaceAll(" ", "_");
+			product.setAlias(defaultAlias);
+		} else {
+			product.setAlias(product.getAlias().replaceAll(" ", "_"));
+		}
+		product.setUpdatedTime(new Date());
+		return productRepository.save(product);
 	}
 
 }

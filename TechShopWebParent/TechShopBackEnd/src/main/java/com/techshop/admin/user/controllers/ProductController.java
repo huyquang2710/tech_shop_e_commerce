@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.techshop.admin.user.services.BrandService;
 import com.techshop.admin.user.services.ProductService;
@@ -45,10 +46,13 @@ public class ProductController {
 		return "products/product_form";
 	}
 	@PostMapping("/save")
-	public String saveProduct(Product product) {
+	public String saveProduct(Product product, RedirectAttributes attributes) {
 		System.out.println("Product: " + product.getName());
 		System.out.println("Brand: " + product.getBrand().getId());
 		System.out.println("Category: " + product.getCategory().getId());
+		productService.save(product);
+		
+		attributes.addFlashAttribute("message", "The product has been successfully");
 		
 		return "redirect:/products";
 	}

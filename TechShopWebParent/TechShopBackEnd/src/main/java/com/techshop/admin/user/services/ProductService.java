@@ -6,4 +6,6 @@ import com.techshop.common.entity.Product;
 
 public interface ProductService {
 	List<Product> findAll();
+	
+	Product save(Product product);
 }
