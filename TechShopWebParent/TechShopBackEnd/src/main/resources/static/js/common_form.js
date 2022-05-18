@@ -8,7 +8,7 @@ $(document).ready(function() {
 		fileSize = this.files[0].size;
 		//alert("File size: " + fileSize);
 
-		if (fileSize > 1100000) {
+		if (fileSize > 110000000000) {
 			this.setCustomValidity("You must chooes an image less than 1MB!");
 			this.reportValidity();
 		} else {

@@ -29,12 +29,19 @@ public class MvcConfig implements WebMvcConfigurer {
 				.addResourceLocations("file:/" + categoryImagePath + "/");
 
 		// brand
-
 		String brandLogoDirName = "../brand-logos";
 		Path brandLogoDir = Paths.get(brandLogoDirName);
 
 		String brandLogoPath = brandLogoDir.toFile().getAbsolutePath();
 
 		registry.addResourceHandler("/brand-logos/**").addResourceLocations("file:/" + brandLogoPath + "/");
+		
+		//product
+		String productLogoDirName = "../product-images";
+		Path productLogoDir = Paths.get(productLogoDirName);
+
+		String productLogoPath = productLogoDir.toFile().getAbsolutePath();
+
+		registry.addResourceHandler("/product-images/**").addResourceLocations("file:/" + productLogoPath + "/");
 	}
 }

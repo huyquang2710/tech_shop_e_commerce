@@ -25,7 +25,7 @@
 		<div th:if="${message != null}"
 			class="alert alert-success text-center">[[${message}]]</div>
 
-<!-- 		<!-- search -->
+<!--search -->
 		<div class="">
 			<form th:action="@{/products/page/1}" class="form-inline m-3">
 				<input type="hidden" name="sortField" th:value="${sortField}" /> <input
@@ -54,6 +54,7 @@
 						</th> -->
 						<th>ID</th>
 						<th>Product Name</th>
+						<th>Product Image</th>
 						<th><a class="text-while">Brand Name</a></th>
 						<th>Category</th>
 						<th>Enabled</th>
@@ -69,6 +70,9 @@
 						<!-- <td><th:block th:each="category : ${brand.categories}">
 								<span class="badge badge-secondary" th:text="${category.name}"></span>
 							</th:block></td>-->
+						<td>
+							<img th:src="@{${product.mainImagePath}}" style="width: 120px;" class="image-fluid" ></img>
+						</td>
 						<td>[[${product.brand.name}]]</td>
 						<td>[[${product.category.name}]]</td>
 						<td>
@@ -91,7 +95,7 @@
 			</table>
 		</div>
 
-		<!-- <!-- show product -->
+		<!--show product -->
 		<div class="text-center m-1" th:if="${totalItems > 0}">
 			<span>Showing Product # [[${startCount}]] to [[${endCount}]] of
 				[[${totalItems}]] </span>
@@ -101,7 +105,7 @@
 		</div> -->
 
 		
-		<!-- <!-- pageable -->
+		<!-- pageable -->
 		<div th:if="${totalPages > 1}">
 			<nav aria-label="Page navigation example">
 				<ul class="pagination justify-content-center">
