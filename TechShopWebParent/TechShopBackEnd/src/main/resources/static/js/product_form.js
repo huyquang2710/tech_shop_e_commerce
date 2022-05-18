@@ -1,3 +1,4 @@
+var extraImageCount = 0;
 dropdownBrands = $("#brand");
 dropdownCategories = $("#category");
 
@@ -13,7 +14,9 @@ $(document).ready(function () {
 	getCategories();
 	
 	$("input[name='extraImage']").each(function(index) {
+		extraImageCount++;
 		$(this).change(function() {
+			
 			showExtraImageThumbnail(this, index);
 		});
 	});
@@ -26,8 +29,10 @@ function showExtraImageThumbnail(fileInput, index) {
 		$("#extraThumbnail" + index).attr("src", e.target.result);
 	};
 	reader.readAsDataURL(file);
-
-	addNextExtraImageSection(index + 1);
+	
+	if(index >= extraImageCount - 1 ) {
+		addNextExtraImageSection(index + 1);
+	}
 }
 
 function addNextExtraImageSection(index) {
@@ -57,7 +62,7 @@ function addNextExtraImageSection(index) {
 }
 
 function removeExtraImage(index) {
-	$("#divExtraImages" + index).remove();
+	$("#divExtraImages" + index).remove();;
 }
 
 
