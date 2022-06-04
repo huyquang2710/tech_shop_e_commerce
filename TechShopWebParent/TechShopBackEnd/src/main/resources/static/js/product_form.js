@@ -78,14 +78,13 @@ function getCategories() {
 }
 
 function checkUnique(form) {
-	url = "[[@{/products/check_unique}]]";
 	productId = $("#id").val();
 	productName = $("#name").val();
 
 	csrfValue = $("input[name='_csrf']").val();
 	params = { id: productId, name: productName, _csrf: csrfValue };
 
-	$.post(url, params, function (response) {
+	$.post(checkUniqueUrl, params, function (response) {
 		if (response == "OK") {
 			form.submit();
 		} else if (response == "Duplicate") {
