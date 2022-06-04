@@ -14,12 +14,19 @@ function addNextDetailSection() {
 
     $("#divProductDetails").append(htmlDetailSection);
     
+    previousDivDetailSection = allDivDetails.last();
+    previousDivDetailID = previousDivDetailSection.attr("id");
+    
    htmlLinkRemove = `
 		<a class="btn fas fa-times-circle fa-2x icon-dark float-right" 
+		href="javascript:removeDetailSectionById('${previousDivDetailID}')"
 		title="Remove this image"
 		</a>
 		`;
 		
-	previousDivDetailSection = allDivDetails.last();
 	previousDivDetailSection.append(htmlLinkRemove);
+}
+
+function removeDetailSectionById(id) {
+	$("#" + id).remove();
 }
