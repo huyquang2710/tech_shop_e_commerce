@@ -1,11 +1,13 @@
 var extraImageCount = 0;
 
 $(document).ready(function () {
-	
-	$("input[name='extraImage']").each(function(index) {
+
+	$("input[name='extraImage']").each(function (index) {
 		extraImageCount++;
-		$(this).change(function() {
-			
+		$(this).change(function () {
+			if (!checkFileSize(this)) {
+				return;
+			}
 			showExtraImageThumbnail(this, index);
 		});
 	});
@@ -18,8 +20,8 @@ function showExtraImageThumbnail(fileInput, index) {
 		$("#extraThumbnail" + index).attr("src", e.target.result);
 	};
 	reader.readAsDataURL(file);
-	
-	if(index >= extraImageCount - 1 ) {
+
+	if (index >= extraImageCount - 1) {
 		addNextExtraImageSection(index + 1);
 	}
 }
@@ -39,13 +41,13 @@ function addNextExtraImageSection(index) {
 			</div>
 		</div>`
 		;
-		
+
 	htmlLinkRemove = `
 		<a class="btn fas fa-times-circle fa-2x icon-dark float-right" 
 		title="Remove this image"
 		href="javascript:removeExtraImage(${index} - 1)" >
 		</a>
-		`;	
+		`;
 	$("#divProductImages").append(htmlExtraImage);
 	$("#extraImageHeader" + (index - 1)).append(htmlLinkRemove);
 }
