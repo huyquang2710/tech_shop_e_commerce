@@ -8,7 +8,7 @@ function addNextDetailSection() {
 			<label for="" class="m-3">Name</label>
 			<input type="text" class="form-control w-25" name="detailNames" maxlength="255">
 			<label for="" class="m-3">Value</label>
-			<input type="text" class="form-control w-25" name="detailNames" maxlength="255">
+			<input type="text" class="form-control w-25" name="detailValues" maxlength="255">
 		</div>
     `;
 
@@ -25,8 +25,9 @@ function addNextDetailSection() {
 		`;
 		
 	previousDivDetailSection.append(htmlLinkRemove);
+	$("input[name='detailNames']").last().focus();
 }
 
-function removeDetailSectionById(id) {
+function removeDetailSectionById(id) {   
 	$("#" + id).remove();
 }
