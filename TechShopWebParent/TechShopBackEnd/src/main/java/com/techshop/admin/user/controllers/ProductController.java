@@ -112,7 +112,7 @@ public class ProductController {
 	private void setMainImageName(MultipartFile multipartFile, Product product) {
 		if (!multipartFile.isEmpty()) {
 			String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
-			product.addExtraImage(fileName);
+			product.setMainImage(fileName);
 		}
 	}
 
@@ -121,7 +121,7 @@ public class ProductController {
 			for (MultipartFile multipartFile : extraImage) {
 				if (!multipartFile.isEmpty()) {
 					String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
-					product.setMainImage(fileName);
+					product.addExtraImage(fileName);
 				}
 			}
 		}
