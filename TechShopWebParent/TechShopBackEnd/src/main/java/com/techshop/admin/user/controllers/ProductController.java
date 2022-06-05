@@ -163,7 +163,7 @@ public class ProductController {
 			
 			model.addAttribute("product", product);
 			model.addAttribute("pageTitle", "Edit Product: " + product.getName());
-			model.addAttribute("listBrands", brands);
+			model.addAttribute("brandList", brands);
 			
 			return "products/product_form";
 		} catch (NoSuchElementException e) {

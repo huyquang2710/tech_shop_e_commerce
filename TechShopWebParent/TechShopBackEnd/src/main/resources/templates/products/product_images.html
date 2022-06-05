@@ -6,20 +6,37 @@
 	<!-- modal -->
 	<div th:fragment="content" th:remove="tag">
 		<div class="row" id="divProductImages">
-			<div class="col border m-3 p-2" id="divExtraImages0">
-				<div class=""><label for="">Main Image: </label></div>
+			<div class="col border m-3 p-2">
+				<div class=""><label for="">Main Image: [[${product.mainImage}]] </label></div>
 				<div class="m-2">
-					<img id="thumbnail" th:src="@{${product.mainImagePath}}" alt="Main image review" class="img-fluid">
+					<img id="thumbnail" th:src="@{${product.mainImagePath}}" alt="Main image review" class="img-fluid"
+						style="object-fit: cover; width:300px;  height:300px;">
 				</div>
+				<input type="hidden" th:field="*{mainImage}" />
 				<div class="">
-					<input type="file" id="fileImage" name="fileImage" required accept="image/png, image/jpeg" />
+					<input type="file" id="fileImage" name="fileImage" th:required="${product.mainImage == null}"
+						accept="image/png, image/jpeg" />
 				</div>
 			</div>
-			
-			<div class="col border m-3 p-2">
+
+			<th:block th:each="productImage, status : ${product.images}">
+				<div class="col border m-3 p-2" id="divExtraImages0">
+					<div id="extraImageHeader0"><label for="">Extra Image: [[${status.index + 1}]] - [[${productImage.name}]] </label></div>
+					<div class="m-2">
+						<img id="extraThumbnail0" th:src="@{${productImage.imagePath}}" alt="Extra image #1"
+							class="img-fluid" style=" object-fit: cover; width:300px;  height:300px;">
+					</div>
+					<div class="">
+						<input type="file" name="extraImage" accept="image/png, image/jpeg" />
+					</div>
+				</div>
+			</th:block>
+
+			<div class="col border m-3 p-2" id="divExtraImages0">
 				<div id="extraImageHeader0"><label for="">Extra Image #1: </label></div>
 				<div class="m-2">
-					<img id="extraThumbnail0" th:src="@{/images/image-thumbnail.png}" alt="Extra image #1" class="img-fluid">
+					<img id="extraThumbnail0" th:src="@{/images/image-thumbnail.png}" alt="Extra image #1"
+						class="img-fluid" style=" object-fit: cover; width:300px;  height:300px;">
 				</div>
 				<div class="">
 					<input type="file" name="extraImage" accept="image/png, image/jpeg" />
