@@ -2,6 +2,7 @@ package com.techshop.admin.user.controllers;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -152,5 +153,23 @@ public class ProductController {
 			attributes.addFlashAttribute("message", e.getMessage());
 		}
 		return "redirect:/products";
+	}
+	
+	@GetMapping("/edit/{id}")
+	public String editForm(@PathVariable("id") Integer id, Model model, RedirectAttributes attributes) throws ProductNotFoundException2 {
+		try {
+			Product product = productService.findById(id);
+			List<Brand> brands = brandService.findAll();
+			
+			model.addAttribute("product", product);
+			model.addAttribute("pageTitle", "Edit Product: " + product.getName());
+			model.addAttribute("listBrands", brands);
+			
+			return "products/product_form";
+		} catch (NoSuchElementException e) {
+			attributes.addFlashAttribute("message", e.getMessage());
+			
+			return "redirect:/products";
+		}
 	}
 }

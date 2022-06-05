@@ -2,6 +2,7 @@ package com.techshop.admin.user.services.impl;
 
 import java.util.Date;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import javax.transaction.Transactional;
 
@@ -68,6 +69,16 @@ public class ProductServiceImpl implements ProductService{
 			throw new ProductNotFoundException2("Count not find any product with ID " + id);
 		}
 		productRepository.deleteById(id);
+	}
+
+	@Override
+	public Product findById(Integer id) throws ProductNotFoundException2 {
+		try {
+			return productRepository.findById(id).get();
+		} catch (NoSuchElementException e) {
+			throw new ProductNotFoundException2("Count not find ID: " + id );
+		}
+		
 	}
 
 }

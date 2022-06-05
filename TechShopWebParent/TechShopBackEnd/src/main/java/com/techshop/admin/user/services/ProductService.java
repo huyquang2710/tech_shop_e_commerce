@@ -15,4 +15,6 @@ public interface ProductService {
 	void updateProductEnabledStatus(Integer id, boolean enabled);
 	
 	void delete(Integer id) throws ProductNotFoundException2;
+	
+	Product findById(Integer id) throws ProductNotFoundException2;
 }
